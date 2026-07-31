@@ -1,0 +1,59 @@
+---
+const {
+  title = 'Clockd — Worth it, or walk away.',
+  description = 'Snap any item once. Save compares the shelf. Flip checks resale on the same scan.',
+} = Astro.props;
+
+const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id6772232502';
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#84cc16" />
+    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:site_name" content="Clockd" />
+    <link rel="icon" href="/assets/mascot.png" type="image/png" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container site-header-inner">
+        <a class="brand" href="/">
+          <span class="brand-mark">⏰</span>
+          <span>CLOCKD</span>
+        </a>
+        <nav class="nav-links">
+          <a class="hide-mobile" href="#how-it-works">How it works</a>
+          <a class="hide-mobile" href="#features">Features</a>
+          <a class="btn btn-lime" href={appStoreUrl}>Get the app</a>
+        </nav>
+      </div>
+    </header>
+
+    <slot />
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>© {new Date().getFullYear()} Garrett Spoor · Clockd AI Scanner</p>
+        <div class="footer-links">
+          <a href="/privacy">Privacy</a>
+          <a href="/terms">Terms</a>
+          <a href="mailto:garrett.spoor@yahoo.com">Support</a>
+          <a href={appStoreUrl}>App Store</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style is:global>
+  @import '../styles/global.css';
+</style>

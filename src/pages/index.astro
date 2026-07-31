@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id6772232502';
+---
+
+<BaseLayout>
+  <main>
+    <section class="hero">
+      <div class="hero-atmosphere" aria-hidden="true">
+        <div class="blob blob-lime"></div>
+        <div class="blob blob-mint"></div>
+      </div>
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-mascot-row">
+            <img class="hero-mascot" src="/assets/mascot.png" alt="Clockd mascot" width="88" height="88" />
+            <div>
+              <p class="kicker">CLOCKD AI SCANNER</p>
+              <div class="hero-badges">
+                <span class="pill pill-lime">Save at the shelf</span>
+                <span class="pill pill-mint">Flip for profit</span>
+              </div>
+            </div>
+          </div>
+          <h1>Worth it—or walk away.</h1>
+          <p class="hero-lead">
+            Snap any item once. Save compares the shelf tag to online prices and nearby stores. Flip checks resale
+            potential on the same scan.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-lime" href={appStoreUrl}>Download on the App Store</a>
+            <a class="btn btn-ghost" href="#how-it-works">See how it works</a>
+          </div>
+        </div>
+        <div class="hero-phone-wrap">
+          <img class="hero-phone" src="/screenshots/home.png" alt="Clockd home screen showing scan hero and bottom ribbon" width="304" height="614" />
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="how-it-works">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">HOW IT WORKS</p>
+          <h2>One scan. Two decisions.</h2>
+          <p>Every lookup starts with Save. Open Flip on the same result when you want resale upside.</p>
+        </div>
+        <div class="steps">
+          <article class="step">
+            <div class="step-num">1</div>
+            <h3>Snap at the shelf</h3>
+            <p>Include the price tag when you can. Clockd reads the item and runs a fast Save analysis.</p>
+          </article>
+          <article class="step">
+            <div class="step-num">2</div>
+            <h3>Save: buy smart</h3>
+            <p>Compare your shelf price to typical ranges, online listings, and cheaper nearby options.</p>
+          </article>
+          <article class="step">
+            <div class="step-num">3</div>
+            <h3>Flip: sell smart</h3>
+            <p>Check resale comps, estimated profit, and marketplace links without scanning again.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="features">
+      <div class="container feature-grid">
+        <article class="feature-card">
+          <div class="feature-copy">
+            <span class="feature-tag">SAVE MODE</span>
+            <h3>Is the shelf price worth it?</h3>
+            <p>
+              Get a clear deal signal, typical price range, and shop links. Add your shelf price if the tag wasn’t in
+              the photo.
+            </p>
+          </div>
+          <div class="feature-shot">
+            <img src="/screenshots/save.png" alt="Clockd Save result with product hero and verdict badge" width="240" height="490" loading="lazy" />
+          </div>
+        </article>
+
+        <article class="feature-card reverse">
+          <div class="feature-copy">
+            <span class="feature-tag">FLIP MODE</span>
+            <h3>Could you flip it for profit?</h3>
+            <p>
+              See estimated resale range, profit after fees, and marketplace comps on the same scan you already ran for
+              Save.
+            </p>
+          </div>
+          <div class="feature-shot">
+            <img src="/screenshots/flip.png" alt="Clockd Flip result showing profit estimate" width="240" height="490" loading="lazy" />
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-copy">
+            <span class="feature-tag">MY ACTIVITY</span>
+            <h3>Track what you actually buy</h3>
+            <p>
+              Bookmark finds, mark purchased when you buy, and see grocery savings and flip profit from your last seven
+              days.
+            </p>
+          </div>
+          <div class="feature-shot">
+            <img src="/screenshots/activity.png" alt="Clockd Activity screen with playbook and stats" width="240" height="490" loading="lazy" />
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <h2>Stop guessing in the aisle.</h2>
+      <p>Clockd is free to download on iPhone. Clockd Pro adds a higher daily analysis limit and an ad-free experience.</p>
+      <a class="btn btn-lime" href={appStoreUrl}>Get Clockd on the App Store</a>
+    </section>
+  </main>
+</BaseLayout>
