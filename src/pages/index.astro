@@ -20,13 +20,14 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
               <div class="hero-badges">
                 <span class="pill pill-lime">Save at the shelf</span>
                 <span class="pill pill-mint">Flip for profit</span>
+                <span class="pill pill-receipt">Receipt trips</span>
               </div>
             </div>
           </div>
           <h1>Worth it—or walk away.</h1>
           <p class="hero-lead">
             Snap any item once. Save compares the shelf tag to online prices and nearby stores. Flip checks resale
-            potential on the same scan.
+            potential on the same scan. After checkout, scan a receipt to log the whole trip.
           </p>
           <div class="hero-actions">
             <a class="btn btn-lime" href={appStoreUrl}>Download on the App Store</a>
@@ -43,8 +44,8 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
       <div class="container">
         <div class="section-head">
           <p class="kicker">HOW IT WORKS</p>
-          <h2>One scan. Two decisions.</h2>
-          <p>Every lookup starts with Save. Open Flip on the same result when you want resale upside.</p>
+          <h2>Items, receipts, and resale—one app.</h2>
+          <p>Every item lookup starts with Save. Open Flip on the same result when you want resale upside. Log full trips with a receipt scan.</p>
         </div>
         <div class="steps">
           <article class="step">
@@ -55,12 +56,17 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
           <article class="step">
             <div class="step-num">2</div>
             <h3>Save: buy smart</h3>
-            <p>Compare your shelf price to typical ranges, online listings, and cheaper nearby options.</p>
+            <p>Compare your shelf price to typical ranges, online listings, and other stores nearby—not the one you’re in.</p>
           </article>
           <article class="step">
             <div class="step-num">3</div>
             <h3>Flip: sell smart</h3>
             <p>Check resale comps, estimated profit, and marketplace links without scanning again.</p>
+          </article>
+          <article class="step">
+            <div class="step-num">4</div>
+            <h3>Receipt: log the trip</h3>
+            <p>Toggle Receipt on the scanner after checkout. Clockd extracts store, line items, and total—saved in Activity.</p>
           </article>
         </div>
       </div>
@@ -98,11 +104,25 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
 
         <article class="feature-card">
           <div class="feature-copy">
+            <span class="feature-tag feature-tag-lime">RECEIPT TRIPS</span>
+            <h3>Log the whole run.</h3>
+            <p>
+              Scan a receipt after checkout to capture store name, every line item, and your total. One snap—saved to
+              Activity for your records.
+            </p>
+          </div>
+          <div class="feature-shot">
+            <img src="/screenshots/receipt.png" alt="Clockd receipt result showing store, items, and total" width="240" height="490" loading="lazy" />
+          </div>
+        </article>
+
+        <article class="feature-card reverse">
+          <div class="feature-copy">
             <span class="feature-tag">MY ACTIVITY</span>
             <h3>Track what you actually buy</h3>
             <p>
-              Bookmark finds, mark purchased when you buy, and see grocery savings and flip profit from your last seven
-              days.
+              Bookmark finds, mark purchased when you buy, see grocery savings and flip profit—and browse saved receipt
+              trips from the last seven days.
             </p>
           </div>
           <div class="feature-shot">
@@ -114,7 +134,7 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
 
     <section class="cta-band">
       <h2>Stop guessing in the aisle.</h2>
-      <p>Clockd is free to download on iPhone. Clockd Pro adds a higher daily analysis limit and an ad-free experience.</p>
+      <p>Clockd is free to download on iPhone. Scan items, log receipts, and upgrade to Clockd Pro for a higher daily analysis limit and an ad-free experience.</p>
       <a class="btn btn-lime" href={appStoreUrl}>Get Clockd on the App Store</a>
     </section>
   </main>

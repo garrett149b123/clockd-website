@@ -236,6 +236,12 @@ img {
   color: #115e59;
 }
 
+.pill-receipt {
+  background: rgba(132, 204, 22, 0.18);
+  color: #3f6212;
+  border: 1px solid rgba(132, 204, 22, 0.35);
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -326,6 +332,10 @@ img {
   margin-bottom: 0.65rem;
 }
 
+.feature-tag-lime {
+  color: var(--lime);
+}
+
 .feature-card h3 {
   font-size: 1.65rem;
   letter-spacing: -0.02em;
@@ -345,8 +355,14 @@ img {
 
 .steps {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .steps {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 .step {
