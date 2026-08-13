@@ -1,4 +1,6 @@
 ---
+import Analytics from '@vercel/analytics/astro';
+
 const {
   title = 'Clockd — Worth it, or walk away.',
   description = 'Snap items at the shelf, log receipt trips, and check Flip resale on the same scan. Save compares your tag to online and nearby prices.',
@@ -22,6 +24,7 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
     <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
     <meta property="og:site_name" content="Clockd" />
     <link rel="icon" href="/assets/mascot.png" type="image/png" />
+    <Analytics />
   </head>
   <body>
     <header class="site-header">
