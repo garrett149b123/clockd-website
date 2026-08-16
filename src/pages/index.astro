@@ -19,7 +19,7 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
               <p class="kicker">CLOCKD AI SCANNER</p>
               <div class="hero-badges">
                 <span class="pill pill-lime">Save at the shelf</span>
-                <span class="pill pill-mint">Flip for profit</span>
+                <span class="pill pill-mint">Grocery list</span>
                 <span class="pill pill-receipt">Receipt trips</span>
                 <span class="pill pill-lime">Lifetime stats</span>
               </div>
@@ -27,9 +27,9 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
           </div>
           <h1>Worth it—or walk away.</h1>
           <p class="hero-lead">
-            Snap any item once. Save compares the shelf tag to online prices and nearby stores. Flip checks resale
-            potential on the same scan. After checkout, scan a receipt to log the whole trip. Profile keeps lifetime
-            grocery saved and flip profit in one place.
+            Snap any item once. Save compares the shelf tag to online prices and nearby stores. Type a grocery list of
+            staples, run one compare, and see nearby grocers plus avg vs brand. Flip checks resale on the same scan.
+            After checkout, scan a receipt to log the trip. Profile keeps lifetime grocery saved and flip profit.
           </p>
           <div class="hero-actions">
             <a class="btn btn-lime" href={appStoreUrl}>Download on the App Store</a>
@@ -37,7 +37,7 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
           </div>
         </div>
         <div class="hero-phone-wrap">
-          <img class="hero-phone" src="/screenshots/home.png" alt="Clockd home screen showing scan hero and bottom ribbon" width="304" height="614" />
+          <img class="hero-phone" src="/screenshots/home.png" alt="Clockd home screen with Scan, List, Activity, and Profile tabs" width="304" height="614" />
         </div>
       </div>
     </section>
@@ -46,8 +46,8 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
       <div class="container">
         <div class="section-head">
           <p class="kicker">HOW IT WORKS</p>
-          <h2>Items, receipts, and resale—one app.</h2>
-          <p>Every item lookup starts with Save. Open Flip on the same result when you want resale upside. Log full trips with a receipt scan.</p>
+          <h2>Items, lists, receipts, and resale—one app.</h2>
+          <p>Every item lookup starts with Save. Build a grocery list of staples and compare nearby grocers in one shot. Open Flip on the same result when you want resale upside. Log full trips with a receipt scan.</p>
         </div>
         <div class="steps">
           <article class="step">
@@ -92,6 +92,20 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
 
         <article class="feature-card reverse">
           <div class="feature-copy">
+            <span class="feature-tag feature-tag-lime">GROCERY LIST</span>
+            <h3>Type staples. Compare once.</h3>
+            <p>
+              Add milk, eggs, Cheerios—then run one compare. Clockd prices the basket at nearby grocers and shows avg
+              vs brand so you can pick the cheapest one-stop trip.
+            </p>
+          </div>
+          <div class="feature-shot">
+            <img src="/screenshots/list.png" alt="Clockd grocery list compare with nearby grocers and avg vs brand" width="240" height="490" loading="lazy" />
+          </div>
+        </article>
+
+        <article class="feature-card">
+          <div class="feature-copy">
             <span class="feature-tag">FLIP MODE</span>
             <h3>Could you flip it for profit?</h3>
             <p>
@@ -104,7 +118,7 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
           </div>
         </article>
 
-        <article class="feature-card">
+        <article class="feature-card reverse">
           <div class="feature-copy">
             <span class="feature-tag feature-tag-lime">RECEIPT TRIPS</span>
             <h3>Log the whole run.</h3>
@@ -118,7 +132,7 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
           </div>
         </article>
 
-        <article class="feature-card reverse">
+        <article class="feature-card">
           <div class="feature-copy">
             <span class="feature-tag">MY ACTIVITY</span>
             <h3>Track what you actually buy</h3>
@@ -132,7 +146,7 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
           </div>
         </article>
 
-        <article class="feature-card">
+        <article class="feature-card reverse">
           <div class="feature-copy">
             <span class="feature-tag">PROFILE</span>
             <h3>Your stats, in one place.</h3>
