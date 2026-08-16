@@ -266,11 +266,13 @@ img {
 .hero-phone-wrap {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .hero-phone {
-  width: min(100%, 19rem);
-  filter: drop-shadow(var(--shadow));
+  width: min(100%, 20rem);
+  height: auto;
+  filter: drop-shadow(0 28px 48px rgba(10, 15, 5, 0.18));
 }
 
 .section {
@@ -348,9 +350,17 @@ img {
   line-height: 1.6;
 }
 
+.feature-shot {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .feature-shot img {
-  width: min(100%, 15rem);
+  width: min(100%, 15.5rem);
+  height: auto;
   margin-inline: auto;
+  filter: drop-shadow(0 22px 40px rgba(10, 15, 5, 0.16));
 }
 
 .steps {
