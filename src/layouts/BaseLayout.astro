@@ -7,6 +7,8 @@ const {
 } = Astro.props;
 
 const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id6772232502';
+const instagramUrl = 'https://www.instagram.com/getclockdapp/';
+const instagramHandle = '@getclockdapp';
 ---
 
 <!doctype html>
@@ -47,6 +49,7 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
       <div class="container footer-grid">
         <p>© {new Date().getFullYear()} Garrett Spoor · Clockd AI Scanner</p>
         <div class="footer-links">
+          <a href={instagramUrl} target="_blank" rel="noopener noreferrer">Instagram {instagramHandle}</a>
           <a href="/privacy">Privacy</a>
           <a href="/terms">Terms</a>
           <a href="mailto:garrett.spoor@yahoo.com">Support</a>
