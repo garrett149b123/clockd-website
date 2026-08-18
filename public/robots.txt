@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://getclockdapp.com/sitemap-index.xml
+Sitemap: https://www.getclockdapp.com/sitemap-index.xml

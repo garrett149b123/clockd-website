@@ -1,4 +1,4 @@
-export const SITE_URL = 'https://getclockdapp.com';
+export const SITE_URL = 'https://www.getclockdapp.com';
 export const APP_STORE_URL = 'https://apps.apple.com/us/app/clockd-ai-scanner/id6772232502';
 export const APP_STORE_ID = '6772232502';
 export const INSTAGRAM_URL = 'https://www.instagram.com/getclockdapp/';

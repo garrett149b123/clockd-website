@@ -52,8 +52,8 @@ DNS can take up to an hour (often minutes). Vercel provisions HTTPS automaticall
 ## After the site is live
 
 1. Confirm https://getclockdapp.com/app-ads.txt returns the AdMob line.
-2. Confirm https://getclockdapp.com/sitemap-index.xml and https://getclockdapp.com/robots.txt.
-3. In [Google Search Console](https://search.google.com/search-console), add `getclockdapp.com`, verify, and submit the sitemap.
+2. Confirm https://www.getclockdapp.com/sitemap-index.xml and https://www.getclockdapp.com/robots.txt.
+3. In [Google Search Console](https://search.google.com/search-console), add `getclockdapp.com`, verify, and submit `https://www.getclockdapp.com/sitemap-index.xml`.
 4. On the next App Store version (when metadata unlocks):
    - **Marketing URL** → `https://getclockdapp.com`
    - **Support URL** → `https://getclockdapp.com`
