@@ -476,6 +476,36 @@ img {
   color: var(--text);
 }
 
+.faq-list {
+  display: grid;
+  gap: 0.75rem;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1rem 1.15rem;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 800;
+  list-style: none;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item p {
+  color: var(--text-secondary);
+  margin-top: 0.7rem;
+  font-size: 0.95rem;
+}
+
 @media (max-width: 900px) {
   .hero-grid,
   .feature-card {

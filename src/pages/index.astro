@@ -1,10 +1,44 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { APP_STORE_URL } from '../data/site';
 
-const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id6772232502';
+const faqs = [
+  {
+    q: 'What is Clockd?',
+    a: 'Clockd is an iPhone grocery price scanner. Snap a shelf tag to see if the price is worth it, compare a shopping list at nearby grocers, log a receipt after checkout, or check resale comps on the same scan.',
+  },
+  {
+    q: 'How does the grocery price scanner work?',
+    a: 'Open Scan, photograph the item with the price tag in frame when you can, and Clockd runs a Save analysis. You get a deal signal, a typical price range, nearby store comparisons, and shop links. Results are AI estimates, not live register prices.',
+  },
+  {
+    q: 'Can I compare a whole grocery list?',
+    a: 'Yes. Type staples like milk, eggs, or Cheerios, then tap Compare. Clockd prices the basket at nearby grocers in one lookup and shows average vs brand so you can pick the cheapest one-stop trip.',
+  },
+  {
+    q: 'Does Clockd help with flipping or resale?',
+    a: 'Flip mode uses the same scan. You can check estimated resale range, profit after fees, and marketplace comps without photographing the item again. Helpful for thrift and resale finds.',
+  },
+  {
+    q: 'Is Clockd free on iPhone?',
+    a: 'Yes. Clockd is free to download on the App Store. Free includes a daily analysis limit. Clockd Pro unlocks 60 analyses per day and ad-free analyzing.',
+  },
+];
+
+const faqLd = {
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
+    },
+  })),
+};
 ---
 
-<BaseLayout>
+<BaseLayout jsonLd={faqLd}>
   <main>
     <section class="hero">
       <div class="hero-atmosphere" aria-hidden="true">
@@ -14,7 +48,7 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
       <div class="container hero-grid">
         <div>
           <div class="hero-mascot-row">
-            <img class="hero-mascot" src="/assets/mascot.png" alt="Clockd mascot" width="88" height="88" />
+            <img class="hero-mascot" src="/assets/mascot.png" alt="Clockd grocery scanner mascot" width="88" height="88" />
             <div>
               <p class="kicker">CLOCKD AI SCANNER</p>
               <div class="hero-badges">
@@ -27,15 +61,16 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
           </div>
           <h1>Worth it—or walk away.</h1>
           <p class="hero-lead">
-            Snap a shelf tag, compare a grocery list, or check if you could flip it—before you spend.
+            Clockd is a grocery price scanner for iPhone. Snap a shelf tag, compare a shopping list, or check if you
+            could flip it—before you spend.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-lime" href={appStoreUrl}>Download on the App Store</a>
+            <a class="btn btn-lime" href={APP_STORE_URL}>Download on the App Store</a>
             <a class="btn btn-ghost" href="#how-it-works">See how it works</a>
           </div>
         </div>
         <div class="hero-phone-wrap">
-          <img class="hero-phone" src="/screenshots/home.png" alt="Clockd home screen with Scan, List, Activity, and Profile tabs" width="460" height="929" />
+          <img class="hero-phone" src="/screenshots/home.png" alt="Clockd iPhone app home screen with Scan, List, Activity, and Profile" width="460" height="929" />
         </div>
       </div>
     </section>
@@ -45,7 +80,7 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
         <div class="section-head">
           <p class="kicker">HOW IT WORKS</p>
           <h2>Four ways to decide before you spend.</h2>
-          <p>Snap an item, compare a list, check resale, or log a receipt.</p>
+          <p>Snap an item, compare a grocery list, check resale, or log a receipt.</p>
         </div>
         <div class="steps">
           <article class="step">
@@ -84,7 +119,7 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
             </p>
           </div>
           <div class="feature-shot">
-            <img src="/screenshots/save.png" alt="Clockd Save result with product hero and verdict badge" width="460" height="929" loading="lazy" />
+            <img src="/screenshots/save.png" alt="Clockd Save result comparing a grocery shelf price on iPhone" width="460" height="929" loading="lazy" />
           </div>
         </article>
 
@@ -98,7 +133,7 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
             </p>
           </div>
           <div class="feature-shot">
-            <img src="/screenshots/list.png" alt="Clockd grocery list compare with nearby grocers and avg vs brand" width="460" height="929" loading="lazy" />
+            <img src="/screenshots/list.png" alt="Clockd grocery list compare with nearby store prices" width="460" height="929" loading="lazy" />
           </div>
         </article>
 
@@ -112,7 +147,7 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
             </p>
           </div>
           <div class="feature-shot">
-            <img src="/screenshots/flip.png" alt="Clockd Flip result showing profit estimate" width="460" height="929" loading="lazy" />
+            <img src="/screenshots/flip.png" alt="Clockd Flip result showing thrift resale profit estimate" width="460" height="929" loading="lazy" />
           </div>
         </article>
 
@@ -126,7 +161,7 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
             </p>
           </div>
           <div class="feature-shot">
-            <img src="/screenshots/receipt.png" alt="Clockd receipt result showing store, items, and total" width="460" height="929" loading="lazy" />
+            <img src="/screenshots/receipt.png" alt="Clockd receipt scanner showing store, grocery items, and total" width="460" height="929" loading="lazy" />
           </div>
         </article>
 
@@ -140,7 +175,7 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
             </p>
           </div>
           <div class="feature-shot">
-            <img src="/screenshots/activity.png" alt="Clockd Activity screen with playbook and stats" width="460" height="929" loading="lazy" />
+            <img src="/screenshots/activity.png" alt="Clockd Activity screen with grocery savings playbook" width="460" height="929" loading="lazy" />
           </div>
         </article>
 
@@ -160,13 +195,31 @@ const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id677223250
       </div>
     </section>
 
+    <section class="section section-alt" id="faq">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">FAQ</p>
+          <h2>Grocery scanning, without the guesswork.</h2>
+          <p>Short answers to how Clockd compares prices on iPhone.</p>
+        </div>
+        <div class="faq-list">
+          {faqs.map((item) => (
+            <details class="faq-item">
+              <summary>{item.q}</summary>
+              <p>{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <section class="cta-band">
       <h2>Stop guessing in the aisle.</h2>
       <p>
         Clockd is free to download on iPhone. Free includes a daily analysis limit. Clockd Pro unlocks 60 analyses per
         day and ad-free analyzing.
       </p>
-      <a class="btn btn-lime" href={appStoreUrl}>Get Clockd on the App Store</a>
+      <a class="btn btn-lime" href={APP_STORE_URL}>Get Clockd on the App Store</a>
     </section>
   </main>
 </BaseLayout>

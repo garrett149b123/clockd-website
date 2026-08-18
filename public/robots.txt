@@ -1,11 +1,4 @@
 User-agent: *
 Allow: /
 
-User-agent: Google-adstxt
-Disallow:
-
-User-agent: Mediapartners-Google
-Disallow:
-
-User-agent: Googlebot
-Disallow:
+Sitemap: https://getclockdapp.com/sitemap-index.xml

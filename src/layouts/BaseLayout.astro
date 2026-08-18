@@ -1,14 +1,60 @@
 ---
 import Analytics from '@vercel/analytics/astro';
+import {
+  APP_STORE_ID,
+  APP_STORE_URL,
+  DEFAULT_DESCRIPTION,
+  DEFAULT_OG_IMAGE,
+  DEFAULT_TITLE,
+  INSTAGRAM_HANDLE,
+  INSTAGRAM_URL,
+  SITE_URL,
+  SUPPORT_EMAIL,
+} from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+}
 
 const {
-  title = 'Clockd — Worth it, or walk away.',
-  description = 'Snap items at the shelf, compare a grocery list at nearby stores, log receipt trips, and check Flip resale on the same scan.',
+  title = DEFAULT_TITLE,
+  description = DEFAULT_DESCRIPTION,
+  ogImage = DEFAULT_OG_IMAGE,
+  jsonLd,
 } = Astro.props;
 
-const appStoreUrl = 'https://apps.apple.com/us/app/clockd-ai-scanner/id6772232502';
-const instagramUrl = 'https://www.instagram.com/getclockdapp/';
-const instagramHandle = '@getclockdapp';
+const canonical = new URL(Astro.url.pathname, Astro.site ?? SITE_URL);
+const ogImageUrl = new URL(ogImage, Astro.site ?? SITE_URL).href;
+
+const softwareLd = {
+  '@type': 'SoftwareApplication',
+  name: 'Clockd AI Scanner',
+  applicationCategory: 'ShoppingApplication',
+  operatingSystem: 'iOS',
+  url: SITE_URL,
+  downloadUrl: APP_STORE_URL,
+  image: ogImageUrl,
+  description,
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+  },
+  author: {
+    '@type': 'Person',
+    name: 'Garrett Spoor',
+  },
+  sameAs: [APP_STORE_URL, INSTAGRAM_URL],
+};
+
+const extraLd = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+const jsonLdPayload = {
+  '@context': 'https://schema.org',
+  '@graph': [softwareLd, ...extraLd],
+};
 ---
 
 <!doctype html>
@@ -19,13 +65,26 @@ const instagramHandle = '@getclockdapp';
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="theme-color" content="#84cc16" />
-    <link rel="canonical" href={new URL(Astro.url.pathname, Astro.site)} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/assets/mascot.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/mascot.png" />
+    <meta name="apple-itunes-app" content={`app-id=${APP_STORE_ID}`} />
+
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content={new URL(Astro.url.pathname, Astro.site)} />
+    <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content="Clockd" />
-    <link rel="icon" href="/assets/mascot.png" type="image/png" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:alt" content="Clockd grocery price scanner app on iPhone" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdPayload)} />
     <Analytics />
   </head>
   <body>
@@ -36,9 +95,10 @@ const instagramHandle = '@getclockdapp';
           <span>CLOCKD</span>
         </a>
         <nav class="nav-links">
-          <a class="hide-mobile" href="#how-it-works">How it works</a>
-          <a class="hide-mobile" href="#features">Features</a>
-          <a class="btn btn-lime" href={appStoreUrl}>Get the app</a>
+          <a class="hide-mobile" href="/#how-it-works">How it works</a>
+          <a class="hide-mobile" href="/#features">Features</a>
+          <a class="hide-mobile" href="/#faq">FAQ</a>
+          <a class="btn btn-lime" href={APP_STORE_URL}>Get the app</a>
         </nav>
       </div>
     </header>
@@ -49,11 +109,11 @@ const instagramHandle = '@getclockdapp';
       <div class="container footer-grid">
         <p>© {new Date().getFullYear()} Garrett Spoor · Clockd AI Scanner</p>
         <div class="footer-links">
-          <a href={instagramUrl} target="_blank" rel="noopener noreferrer">Instagram {instagramHandle}</a>
+          <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">Instagram {INSTAGRAM_HANDLE}</a>
           <a href="/privacy">Privacy</a>
           <a href="/terms">Terms</a>
-          <a href="mailto:garrett.spoor@yahoo.com">Support</a>
-          <a href={appStoreUrl}>App Store</a>
+          <a href={`mailto:${SUPPORT_EMAIL}`}>Support</a>
+          <a href={APP_STORE_URL}>App Store</a>
         </div>
       </div>
     </footer>
