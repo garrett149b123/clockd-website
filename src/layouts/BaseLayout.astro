@@ -2,6 +2,8 @@
 import Analytics from '@vercel/analytics/astro';
 import {
   APP_STORE_ID,
+  APP_STORE_RATING,
+  APP_STORE_RATING_COUNT,
   APP_STORE_URL,
   DEFAULT_DESCRIPTION,
   DEFAULT_OG_IMAGE,
@@ -38,6 +40,13 @@ const softwareLd = {
   downloadUrl: APP_STORE_URL,
   image: ogImageUrl,
   description,
+  aggregateRating: {
+    '@type': 'AggregateRating',
+    ratingValue: APP_STORE_RATING,
+    ratingCount: APP_STORE_RATING_COUNT,
+    bestRating: 5,
+    worstRating: 1,
+  },
   offers: {
     '@type': 'Offer',
     price: '0',
@@ -89,17 +98,18 @@ const jsonLdPayload = {
     <Analytics />
   </head>
   <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
     <header class="site-header">
       <div class="container site-header-inner">
         <a class="brand" href="/">
           <span class="brand-mark">⏰</span>
           <span>CLOCKD</span>
         </a>
-        <nav class="nav-links">
+        <nav class="nav-links" aria-label="Primary">
           <a class="hide-mobile" href="/#how-it-works">How it works</a>
-          <a class="hide-mobile" href="/#features">Features</a>
+          <a class="hide-mobile" href="/#see-it">See it</a>
           <a class="hide-mobile" href="/#faq">FAQ</a>
-          <a class="btn btn-lime" href={APP_STORE_URL}>Get the app</a>
+          <a class="btn btn-lime" href={APP_STORE_URL}>Get free</a>
         </nav>
       </div>
     </header>

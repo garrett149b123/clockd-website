@@ -1,0 +1,31 @@
+# Clockd
+
+> Grocery price scanner for iPhone. Snap a shelf tag and see if the price is worth it — then buy or walk.
+
+## Product
+- Name: Clockd AI Scanner
+- Platform: iOS (iPhone / iPad)
+- URL: https://www.getclockdapp.com
+- App Store: https://apps.apple.com/us/app/clockd-ai-scanner/id6772232502
+- Instagram: https://www.instagram.com/getclockdapp/
+
+## Core value
+One photo answers: is this shelf price a deal? Clockd shows a deal signal, typical price range, and online comps (Amazon, Walmart, Target). Results are AI estimates, not live register prices.
+
+## Also included
+- Grocery list compare across nearby stores
+- Flip: resale range and profit estimate on the same scan
+- Receipt trips: log store, line items, and total after checkout
+
+## Pricing
+Free to download with a daily analysis limit. Clockd Pro unlocks a higher daily limit and ad-free analyzing. No credit card required to download.
+
+## Pages
+- / — Marketing landing page
+- /privacy — Privacy policy
+- /terms — Terms of service
+- /app-ads.txt — Authorized digital sellers
+- /sitemap-index.xml — XML sitemap
+
+## Contact
+Support: mailto:garrett.spoor@yahoo.com

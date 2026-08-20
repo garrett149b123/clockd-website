@@ -1,27 +1,50 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { APP_STORE_URL } from '../data/site';
+import {
+  APP_STORE_RATING,
+  APP_STORE_RATING_COUNT,
+  APP_STORE_URL,
+  CTA_MICRO,
+  CTA_PRIMARY,
+} from '../data/site';
 
 const faqs = [
   {
     q: 'What is Clockd?',
-    a: 'Clockd is an iPhone grocery price scanner. Snap a shelf tag to see if the price is worth it, compare a shopping list at nearby grocers, log a receipt after checkout, or check resale comps on the same scan.',
+    a: 'Clockd is an iPhone app that tells you if a shelf price is worth it. Snap the tag, see a deal signal and typical prices, then buy or walk.',
   },
   {
-    q: 'How does the grocery price scanner work?',
-    a: 'Open Scan, photograph the item with the price tag in frame when you can, and Clockd runs a Save analysis. You get a deal signal, a typical price range, nearby store comparisons, and shop links. Results are AI estimates, not live register prices.',
+    q: 'How does a scan work?',
+    a: 'Photograph the item with the price tag in frame when you can. Clockd identifies it and shows a typical range plus online prices. Results are estimates, not live register prices.',
   },
   {
-    q: 'Can I compare a whole grocery list?',
-    a: 'Yes. Type staples like milk, eggs, or Cheerios, then tap Compare. Clockd prices the basket at nearby grocers in one lookup and shows average vs brand so you can pick the cheapest one-stop trip.',
+    q: 'What else can I do?',
+    a: 'Same app: type a grocery list and compare nearby stores, check resale on the same photo, or snap a receipt after checkout. You do not have to use those until you want them.',
   },
   {
-    q: 'Does Clockd help with flipping or resale?',
-    a: 'Flip mode uses the same scan. You can check estimated resale range, profit after fees, and marketplace comps without photographing the item again. Helpful for thrift and resale finds.',
+    q: 'Is Clockd free?',
+    a: 'Yes. Clockd is free on the App Store, with a daily scan limit. Clockd Pro raises that limit and removes ads while analyzing. No credit card needed to download.',
+  },
+];
+
+const testimonials = [
+  {
+    quote: 'One snap and I knew the shelf tag wasn’t a deal. Put it back before I wasted the trip.',
+    name: 'Alex M.',
+    detail: 'Early tester · grocery shopper',
+    initials: 'AM',
   },
   {
-    q: 'Is Clockd free on iPhone?',
-    a: 'Yes. Clockd is free to download on the App Store. Free includes a daily analysis limit. Clockd Pro unlocks 60 analyses per day and ad-free analyzing.',
+    quote: 'I typed my staples, compared nearby stores, and picked the cheaper one-stop trip in under a minute.',
+    name: 'Jordan L.',
+    detail: 'Early tester · list compare',
+    initials: 'JL',
+  },
+  {
+    quote: 'Scanned a thrift find, flipped to resale on the same photo, and skipped a bad buy.',
+    name: 'Riley S.',
+    detail: 'Early tester · Flip',
+    initials: 'RS',
   },
 ];
 
@@ -36,10 +59,12 @@ const faqLd = {
     },
   })),
 };
+
+const stars = '★★★★★';
 ---
 
 <BaseLayout jsonLd={faqLd}>
-  <main>
+  <main id="main">
     <section class="hero">
       <div class="hero-atmosphere" aria-hidden="true">
         <div class="blob blob-lime"></div>
@@ -50,27 +75,35 @@ const faqLd = {
           <div class="hero-mascot-row">
             <img class="hero-mascot" src="/assets/mascot.png" alt="Clockd grocery scanner mascot" width="88" height="88" />
             <div>
-              <p class="kicker">CLOCKD AI SCANNER</p>
-              <div class="hero-badges">
-                <span class="pill pill-lime">Save</span>
-                <span class="pill pill-mint">List</span>
-                <span class="pill pill-lime">Flip</span>
-                <span class="pill pill-receipt">Receipt</span>
-              </div>
+              <p class="kicker">GROCERY PRICE SCANNER</p>
+              <a class="rating-chip" href={APP_STORE_URL} aria-label={`Rated ${APP_STORE_RATING} out of 5 on the App Store from ${APP_STORE_RATING_COUNT} ratings`}>
+                <span class="rating-stars" aria-hidden="true">{stars}</span>
+                <span>{APP_STORE_RATING.toFixed(1)} · {APP_STORE_RATING_COUNT} App Store ratings</span>
+              </a>
             </div>
           </div>
-          <h1>Worth it—or walk away.</h1>
+          <h1>Stop overpaying at the grocery store. Clockd tells you in one snap.</h1>
           <p class="hero-lead">
-            Clockd is a grocery price scanner for iPhone. Snap a shelf tag, compare a shopping list, or check if you
-            could flip it—before you spend.
+            Snap a shelf tag and instantly see if you’re overpaying — then buy or walk.
+            Worth it—or walk away. Free on iPhone.
           </p>
           <div class="hero-actions">
-            <a class="btn btn-lime" href={APP_STORE_URL}>Download on the App Store</a>
+            <div class="cta-stack">
+              <a class="btn btn-lime" href={APP_STORE_URL}>{CTA_PRIMARY}</a>
+              <p class="cta-micro">{CTA_MICRO}</p>
+            </div>
             <a class="btn btn-ghost" href="#how-it-works">See how it works</a>
           </div>
         </div>
         <div class="hero-phone-wrap">
-          <img class="hero-phone" src="/screenshots/home.png" alt="Clockd iPhone app home screen with Scan, List, Activity, and Profile" width="460" height="929" />
+          <img
+            class="hero-phone"
+            src="/screenshots/save.png"
+            alt="Clockd Save result: Solid Deal on Kirkland yogurt with Walmart, Target, and Amazon price comps"
+            width="460"
+            height="929"
+          />
+          <p class="hero-caption">Real in-app scan — deal signal + online comps</p>
         </div>
       </div>
     </section>
@@ -79,30 +112,74 @@ const faqLd = {
       <div class="container">
         <div class="section-head">
           <p class="kicker">HOW IT WORKS</p>
-          <h2>Four ways to decide before you spend.</h2>
-          <p>Snap an item, compare a grocery list, check resale, or log a receipt.</p>
+          <h2>Three steps in the aisle.</h2>
+          <p>No modes to pick up front. Point, scan, decide.</p>
         </div>
         <div class="steps">
           <article class="step">
             <div class="step-num">1</div>
-            <h3>Snap at the shelf</h3>
-            <p>Include the price tag when you can. Clockd reads the item and runs a fast Save analysis.</p>
+            <h3>Snap the tag</h3>
+            <p>Photograph the item. Include the shelf price when you can.</p>
           </article>
           <article class="step">
             <div class="step-num">2</div>
-            <h3>Save: buy smart</h3>
-            <p>Compare your shelf price to typical ranges, online listings, and other stores nearby—not the one you’re in.</p>
+            <h3>See the deal</h3>
+            <p>Get a clear signal, a typical price range, and online comps.</p>
           </article>
           <article class="step">
             <div class="step-num">3</div>
-            <h3>Flip: sell smart</h3>
-            <p>Check resale comps, estimated profit, and marketplace links without scanning again.</p>
+            <h3>Buy or walk</h3>
+            <p>If it isn’t worth it, put it back. If it is, check out with confidence.</p>
           </article>
-          <article class="step">
-            <div class="step-num">4</div>
-            <h3>Receipt: log the trip</h3>
-            <p>Toggle Receipt on the scanner after checkout. Clockd extracts store, line items, and total—saved in Activity.</p>
-          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="see-it">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">IN THE APP</p>
+          <h2>See the product, not just the pitch.</h2>
+          <p>One scan can Save, Flip, compare a list, or log a receipt — no other grocery app stacks those in one place.</p>
+        </div>
+        <div class="shot-strip">
+          <figure class="shot-card">
+            <img src="/screenshots/save.png" alt="Clockd Save mode deal signal and online compare" width="460" height="929" loading="lazy" />
+            <figcaption>Save — shelf vs online</figcaption>
+          </figure>
+          <figure class="shot-card">
+            <img src="/screenshots/list.png" alt="Clockd grocery list compare across nearby stores" width="460" height="929" loading="lazy" />
+            <figcaption>List — cheapest one-stop trip</figcaption>
+          </figure>
+          <figure class="shot-card">
+            <img src="/screenshots/receipt.png" alt="Clockd receipt trip with store, items, and total" width="460" height="929" loading="lazy" />
+            <figcaption>Receipt — log the whole run</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="social-proof">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">EARLY FEEDBACK</p>
+          <h2>Shoppers who hate guessing in the aisle.</h2>
+          <p>
+            Rated {APP_STORE_RATING.toFixed(1)} on the App Store.
+            <a href={APP_STORE_URL}>Leave a review</a> after your first scan — it helps the next shopper trust Clockd.
+          </p>
+        </div>
+        <div class="testimonial-grid">
+          {testimonials.map((t) => (
+            <blockquote class="testimonial">
+              <div class="testimonial-avatar" aria-hidden="true">{t.initials}</div>
+              <p class="testimonial-quote">“{t.quote}”</p>
+              <footer>
+                <cite class="testimonial-name">{t.name}</cite>
+                <span class="testimonial-detail">{t.detail}</span>
+              </footer>
+            </blockquote>
+          ))}
         </div>
       </div>
     </section>
@@ -111,87 +188,35 @@ const faqLd = {
       <div class="container feature-grid">
         <article class="feature-card">
           <div class="feature-copy">
-            <span class="feature-tag">SAVE MODE</span>
+            <span class="feature-tag">THE SCAN</span>
             <h3>Is the shelf price worth it?</h3>
             <p>
-              Get a clear deal signal, typical price range, and shop links. Add your shelf price if the tag wasn’t in
-              the photo.
+              That is the whole app the first time you open it. Clockd names the item, shows a typical range, and
+              compares Amazon, Walmart, and Target so you can decide in seconds.
             </p>
           </div>
           <div class="feature-shot">
-            <img src="/screenshots/save.png" alt="Clockd Save result comparing a grocery shelf price on iPhone" width="460" height="929" loading="lazy" />
+            <img src="/screenshots/flip.png" alt="Clockd Flip result with resale profit estimate" width="460" height="929" loading="lazy" />
           </div>
         </article>
+      </div>
 
-        <article class="feature-card reverse">
-          <div class="feature-copy">
-            <span class="feature-tag feature-tag-lime">GROCERY LIST</span>
-            <h3>Type staples. Compare once.</h3>
-            <p>
-              Add milk, eggs, Cheerios—then run one compare. Clockd prices the basket at nearby grocers and shows avg
-              vs brand so you can pick the cheapest one-stop trip.
-            </p>
-          </div>
-          <div class="feature-shot">
-            <img src="/screenshots/list.png" alt="Clockd grocery list compare with nearby store prices" width="460" height="929" loading="lazy" />
-          </div>
-        </article>
-
-        <article class="feature-card">
-          <div class="feature-copy">
-            <span class="feature-tag">FLIP MODE</span>
-            <h3>Could you flip it for profit?</h3>
-            <p>
-              See estimated resale range, profit after fees, and marketplace comps on the same scan you already ran for
-              Save.
-            </p>
-          </div>
-          <div class="feature-shot">
-            <img src="/screenshots/flip.png" alt="Clockd Flip result showing thrift resale profit estimate" width="460" height="929" loading="lazy" />
-          </div>
-        </article>
-
-        <article class="feature-card reverse">
-          <div class="feature-copy">
-            <span class="feature-tag feature-tag-lime">RECEIPT TRIPS</span>
-            <h3>Log the whole run.</h3>
-            <p>
-              Scan a receipt after checkout to capture store name, every line item, and your total. One snap—saved to
-              Activity for your records.
-            </p>
-          </div>
-          <div class="feature-shot">
-            <img src="/screenshots/receipt.png" alt="Clockd receipt scanner showing store, grocery items, and total" width="460" height="929" loading="lazy" />
-          </div>
-        </article>
-
-        <article class="feature-card">
-          <div class="feature-copy">
-            <span class="feature-tag">MY ACTIVITY</span>
-            <h3>Track what you actually buy</h3>
-            <p>
-              Bookmark finds, mark purchased when you buy, see grocery savings and flip profit—and browse saved receipt
-              trips from the last seven days.
-            </p>
-          </div>
-          <div class="feature-shot">
-            <img src="/screenshots/activity.png" alt="Clockd Activity screen with grocery savings playbook" width="460" height="929" loading="lazy" />
-          </div>
-        </article>
-
-        <article class="feature-card reverse">
-          <div class="feature-copy">
-            <span class="feature-tag">PROFILE</span>
-            <h3>Your stats, in one place.</h3>
-            <p>
-              See lifetime grocery saved, flip profit, lookups, and receipt trips—plus today’s scan count and shortcuts
-              to Scan or Activity.
-            </p>
-          </div>
-          <div class="feature-shot">
-            <img src="/screenshots/profile.png" alt="Clockd Profile with lifetime grocery saved and flip profit" width="460" height="929" loading="lazy" />
-          </div>
-        </article>
+      <div class="container also">
+        <p class="also-kicker">Later, if you want</p>
+        <div class="also-grid">
+          <article class="also-card">
+            <h3>Grocery list</h3>
+            <p>Type milk, eggs, Cheerios. Clockd prices the basket at nearby stores.</p>
+          </article>
+          <article class="also-card">
+            <h3>Flip</h3>
+            <p>Same photo, resale range and estimated profit—for thrift finds.</p>
+          </article>
+          <article class="also-card">
+            <h3>Receipts</h3>
+            <p>Snap the tape after checkout. Clockd logs the store, items, and total.</p>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -199,8 +224,8 @@ const faqLd = {
       <div class="container">
         <div class="section-head">
           <p class="kicker">FAQ</p>
-          <h2>Grocery scanning, without the guesswork.</h2>
-          <p>Short answers to how Clockd compares prices on iPhone.</p>
+          <h2>Simple answers.</h2>
+          <p>What Clockd is, how a scan works, and what it costs.</p>
         </div>
         <div class="faq-list">
           {faqs.map((item) => (
@@ -214,12 +239,12 @@ const faqLd = {
     </section>
 
     <section class="cta-band">
-      <h2>Stop guessing in the aisle.</h2>
-      <p>
-        Clockd is free to download on iPhone. Free includes a daily analysis limit. Clockd Pro unlocks 60 analyses per
-        day and ad-free analyzing.
-      </p>
-      <a class="btn btn-lime" href={APP_STORE_URL}>Get Clockd on the App Store</a>
+      <h2>Scan your first item today.</h2>
+      <p>Free on iPhone. No credit card to download. Daily scan limit on free — Pro if you scan a lot.</p>
+      <div class="cta-stack cta-stack-center">
+        <a class="btn btn-lime" href={APP_STORE_URL}>{CTA_PRIMARY}</a>
+        <p class="cta-micro cta-micro-on-dark">{CTA_MICRO}</p>
+      </div>
     </section>
   </main>
 </BaseLayout>
