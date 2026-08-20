@@ -10,8 +10,8 @@ export const SUPPORT_EMAIL = 'garrett.spoor@yahoo.com';
 
 export const DEFAULT_TITLE = 'Clockd | Grocery Price Scanner for iPhone';
 export const DEFAULT_DESCRIPTION =
-  'Stop overpaying at the grocery store. Snap a shelf tag on iPhone and Clockd tells you in one snap if the price is worth it. Free to download.';
+  'One snap tells you if that grocery price is actually a deal. Compare to Amazon, Walmart, and Target — free on iPhone.';
 export const DEFAULT_OG_IMAGE = '/screenshots/save.png';
 
-export const CTA_PRIMARY = 'Scan Your First Item Free';
+export const CTA_PRIMARY = 'Download Clockd Free on iPhone';
 export const CTA_MICRO = 'Free to download · No credit card needed';

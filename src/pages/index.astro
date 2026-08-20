@@ -6,6 +6,7 @@ import {
   APP_STORE_URL,
   CTA_MICRO,
   CTA_PRIMARY,
+  SUPPORT_EMAIL,
 } from '../data/site';
 
 const faqs = [
@@ -49,6 +50,7 @@ const testimonials = [
 ];
 
 const faqLd = {
+  '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: faqs.map((item) => ({
     '@type': 'Question',
@@ -63,7 +65,7 @@ const faqLd = {
 const stars = '★★★★★';
 ---
 
-<BaseLayout jsonLd={faqLd}>
+<BaseLayout faqJsonLd={faqLd}>
   <main id="main">
     <section class="hero">
       <div class="hero-atmosphere" aria-hidden="true">
@@ -72,38 +74,56 @@ const stars = '★★★★★';
       </div>
       <div class="container hero-grid">
         <div>
-          <div class="hero-mascot-row">
-            <img class="hero-mascot" src="/assets/mascot.png" alt="Clockd grocery scanner mascot" width="88" height="88" />
-            <div>
-              <p class="kicker">GROCERY PRICE SCANNER</p>
-              <a class="rating-chip" href={APP_STORE_URL} aria-label={`Rated ${APP_STORE_RATING} out of 5 on the App Store from ${APP_STORE_RATING_COUNT} ratings`}>
-                <span class="rating-stars" aria-hidden="true">{stars}</span>
-                <span>{APP_STORE_RATING.toFixed(1)} · {APP_STORE_RATING_COUNT} App Store ratings</span>
-              </a>
-            </div>
-          </div>
-          <h1>Stop overpaying at the grocery store. Clockd tells you in one snap.</h1>
+          <p class="kicker">GROCERY PRICE SCANNER</p>
+          <h1>One snap tells you if that grocery price is actually a deal.</h1>
           <p class="hero-lead">
-            Snap a shelf tag and instantly see if you’re overpaying — then buy or walk.
-            Worth it—or walk away. Free on iPhone.
+            Snap any shelf tag and Clockd shows a deal signal, typical price range, and comparisons to Amazon,
+            Walmart, and Target — so you decide in seconds. Worth it—or walk away.
+          </p>
+          <p class="diff-line">
+            The only iPhone app that compares your shelf price to Amazon, Walmart, and Target in one snap —
+            then Flip, list, or receipt if you need them.
           </p>
           <div class="hero-actions">
             <div class="cta-stack">
-              <a class="btn btn-lime" href={APP_STORE_URL}>{CTA_PRIMARY}</a>
+              <a class="btn btn-lime btn-hero" href={APP_STORE_URL}>{CTA_PRIMARY}</a>
               <p class="cta-micro">{CTA_MICRO}</p>
             </div>
-            <a class="btn btn-ghost" href="#how-it-works">See how it works</a>
+            <a class="btn btn-ghost" href="#see-it">Watch a scan</a>
           </div>
+          <p class="rating-note" aria-label={`Rated ${APP_STORE_RATING} out of 5 on the App Store from ${APP_STORE_RATING_COUNT} ratings`}>
+            <span class="rating-stars" aria-hidden="true">{stars}</span>
+            {APP_STORE_RATING.toFixed(1)} on the App Store · {APP_STORE_RATING_COUNT} ratings
+          </p>
         </div>
         <div class="hero-phone-wrap">
-          <img
-            class="hero-phone"
-            src="/screenshots/save.png"
-            alt="Clockd Save result: Solid Deal on Kirkland yogurt with Walmart, Target, and Amazon price comps"
-            width="460"
-            height="929"
-          />
-          <p class="hero-caption">Real in-app scan — deal signal + online comps</p>
+          <div class="demo-reel" aria-label="Clockd scan demo: home to Save result">
+            <picture>
+              <source srcset="/screenshots/home.webp" type="image/webp" />
+              <img
+                class="demo-frame demo-frame-a"
+                src="/screenshots/home.png"
+                alt=""
+                width="360"
+                height="728"
+                decoding="async"
+                aria-hidden="true"
+              />
+            </picture>
+            <picture>
+              <source srcset="/screenshots/save.webp" type="image/webp" />
+              <img
+                class="demo-frame demo-frame-b"
+                src="/screenshots/save.png"
+                alt="Clockd Save result with Solid Deal and Amazon, Walmart, Target comps"
+                width="360"
+                height="728"
+                fetchpriority="high"
+                decoding="async"
+              />
+            </picture>
+          </div>
+          <p class="hero-caption">In-app scan → deal signal + online comps</p>
         </div>
       </div>
     </section>
@@ -124,7 +144,7 @@ const stars = '★★★★★';
           <article class="step">
             <div class="step-num">2</div>
             <h3>See the deal</h3>
-            <p>Get a clear signal, a typical price range, and online comps.</p>
+            <p>Get a clear signal, a typical price range, and Amazon / Walmart / Target comps.</p>
           </article>
           <article class="step">
             <div class="step-num">3</div>
@@ -140,19 +160,31 @@ const stars = '★★★★★';
         <div class="section-head">
           <p class="kicker">IN THE APP</p>
           <h2>See the product, not just the pitch.</h2>
-          <p>One scan can Save, Flip, compare a list, or log a receipt — no other grocery app stacks those in one place.</p>
+          <p>
+            Unlike Flipp or basket apps that stop at coupons or lists, Clockd is built for the shelf decision —
+            Save, Flip, list, and receipt in one place.
+          </p>
         </div>
         <div class="shot-strip">
           <figure class="shot-card">
-            <img src="/screenshots/save.png" alt="Clockd Save mode deal signal and online compare" width="460" height="929" loading="lazy" />
+            <picture>
+              <source srcset="/screenshots/save.webp" type="image/webp" />
+              <img src="/screenshots/save.png" alt="Clockd Save mode deal signal and online compare" width="360" height="728" loading="lazy" decoding="async" />
+            </picture>
             <figcaption>Save — shelf vs online</figcaption>
           </figure>
           <figure class="shot-card">
-            <img src="/screenshots/list.png" alt="Clockd grocery list compare across nearby stores" width="460" height="929" loading="lazy" />
+            <picture>
+              <source srcset="/screenshots/list.webp" type="image/webp" />
+              <img src="/screenshots/list.png" alt="Clockd grocery list compare across nearby stores" width="360" height="728" loading="lazy" decoding="async" />
+            </picture>
             <figcaption>List — cheapest one-stop trip</figcaption>
           </figure>
           <figure class="shot-card">
-            <img src="/screenshots/receipt.png" alt="Clockd receipt trip with store, items, and total" width="460" height="929" loading="lazy" />
+            <picture>
+              <source srcset="/screenshots/receipt.webp" type="image/webp" />
+              <img src="/screenshots/receipt.png" alt="Clockd receipt trip with store, items, and total" width="360" height="728" loading="lazy" decoding="async" />
+            </picture>
             <figcaption>Receipt — log the whole run</figcaption>
           </figure>
         </div>
@@ -184,7 +216,22 @@ const stars = '★★★★★';
       </div>
     </section>
 
-    <section class="section" id="features">
+    <section class="section" id="built-by">
+      <div class="container founder">
+        <div class="founder-avatar" aria-hidden="true">GS</div>
+        <div>
+          <p class="kicker">BUILT BY</p>
+          <h2>Garrett Spoor</h2>
+          <p>
+            I built Clockd after one too many aisle moments of “is this actually a deal?” Coupons and shopping lists
+            help after you’ve already decided — Clockd is for the second before you put it in the cart. Independent
+            indie app. Questions? <a href={`mailto:${SUPPORT_EMAIL}`}>Email me</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="features">
       <div class="container feature-grid">
         <article class="feature-card">
           <div class="feature-copy">
@@ -196,7 +243,10 @@ const stars = '★★★★★';
             </p>
           </div>
           <div class="feature-shot">
-            <img src="/screenshots/flip.png" alt="Clockd Flip result with resale profit estimate" width="460" height="929" loading="lazy" />
+            <picture>
+              <source srcset="/screenshots/flip.webp" type="image/webp" />
+              <img src="/screenshots/flip.png" alt="Clockd Flip result with resale profit estimate" width="360" height="728" loading="lazy" decoding="async" />
+            </picture>
           </div>
         </article>
       </div>
@@ -220,7 +270,7 @@ const stars = '★★★★★';
       </div>
     </section>
 
-    <section class="section section-alt" id="faq">
+    <section class="section" id="faq">
       <div class="container">
         <div class="section-head">
           <p class="kicker">FAQ</p>
@@ -239,10 +289,13 @@ const stars = '★★★★★';
     </section>
 
     <section class="cta-band">
-      <h2>Scan your first item today.</h2>
-      <p>Free on iPhone. No credit card to download. Daily scan limit on free — Pro if you scan a lot.</p>
+      <h2>Download Clockd free on iPhone.</h2>
+      <p class="diff-line diff-line-on-dark">
+        The only app that compares shelf price to Amazon, Walmart, and Target in one snap.
+      </p>
+      <p>No credit card to download. Daily scan limit on free — Pro if you scan a lot.</p>
       <div class="cta-stack cta-stack-center">
-        <a class="btn btn-lime" href={APP_STORE_URL}>{CTA_PRIMARY}</a>
+        <a class="btn btn-lime btn-hero" href={APP_STORE_URL}>{CTA_PRIMARY}</a>
         <p class="cta-micro cta-micro-on-dark">{CTA_MICRO}</p>
       </div>
     </section>

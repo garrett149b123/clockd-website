@@ -18,7 +18,10 @@ interface Props {
   title?: string;
   description?: string;
   ogImage?: string;
+  /** SoftwareApplication extras (rarely needed). */
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  /** Standalone FAQPage JSON-LD for rich results. */
+  faqJsonLd?: Record<string, unknown>;
 }
 
 const {
@@ -26,10 +29,12 @@ const {
   description = DEFAULT_DESCRIPTION,
   ogImage = DEFAULT_OG_IMAGE,
   jsonLd,
+  faqJsonLd,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site ?? SITE_URL);
 const ogImageUrl = new URL(ogImage, Astro.site ?? SITE_URL).href;
+const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
 
 const softwareLd = {
   '@type': 'SoftwareApplication',
@@ -55,6 +60,8 @@ const softwareLd = {
   author: {
     '@type': 'Person',
     name: 'Garrett Spoor',
+    email: SUPPORT_EMAIL,
+    url: SITE_URL,
   },
   sameAs: [APP_STORE_URL, INSTAGRAM_URL],
 };
@@ -76,9 +83,16 @@ const jsonLdPayload = {
     <meta name="google-site-verification" content="UStUZVb9vMAgtwcrdEtoTOvdvh7OL5LSqpqU-eGG_P8" />
     <meta name="theme-color" content="#84cc16" />
     <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/assets/mascot.webp" type="image/webp" />
     <link rel="icon" href="/assets/mascot.png" type="image/png" />
     <link rel="apple-touch-icon" href="/assets/mascot.png" />
     <meta name="apple-itunes-app" content={`app-id=${APP_STORE_ID}`} />
+    {isHome && (
+      <>
+        <link rel="preload" as="image" href="/screenshots/save.webp" type="image/webp" fetchpriority="high" />
+        <link rel="preload" as="image" href="/screenshots/home.webp" type="image/webp" />
+      </>
+    )}
 
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -95,6 +109,7 @@ const jsonLdPayload = {
     <meta name="twitter:image" content={ogImageUrl} />
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLdPayload)} />
+    {faqJsonLd && <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />}
     <Analytics />
   </head>
   <body>
@@ -108,8 +123,9 @@ const jsonLdPayload = {
         <nav class="nav-links" aria-label="Primary">
           <a class="hide-mobile" href="/#how-it-works">How it works</a>
           <a class="hide-mobile" href="/#see-it">See it</a>
+          <a class="hide-mobile" href="/#built-by">Built by</a>
           <a class="hide-mobile" href="/#faq">FAQ</a>
-          <a class="btn btn-lime" href={APP_STORE_URL}>Get free</a>
+          <a class="btn btn-lime" href={APP_STORE_URL}>Download free</a>
         </nav>
       </div>
     </header>
@@ -121,6 +137,7 @@ const jsonLdPayload = {
         <p>© {new Date().getFullYear()} Garrett Spoor · Clockd AI Scanner</p>
         <div class="footer-links">
           <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">Instagram {INSTAGRAM_HANDLE}</a>
+          <a href="/#built-by">About</a>
           <a href="/privacy">Privacy</a>
           <a href="/terms">Terms</a>
           <a href={`mailto:${SUPPORT_EMAIL}`}>Support</a>
