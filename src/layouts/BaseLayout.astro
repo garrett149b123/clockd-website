@@ -2,8 +2,6 @@
 import Analytics from '@vercel/analytics/astro';
 import {
   APP_STORE_ID,
-  APP_STORE_RATING,
-  APP_STORE_RATING_COUNT,
   APP_STORE_URL,
   DEFAULT_DESCRIPTION,
   DEFAULT_OG_IMAGE,
@@ -13,6 +11,8 @@ import {
   SITE_URL,
   SUPPORT_EMAIL,
 } from '../data/site';
+import type { AppStoreRating } from '../lib/appStoreRating';
+import { FALLBACK_APP_STORE_RATING } from '../lib/appStoreRating';
 
 interface Props {
   title?: string;
@@ -22,6 +22,8 @@ interface Props {
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   /** Standalone FAQPage JSON-LD for rich results. */
   faqJsonLd?: Record<string, unknown>;
+  /** Live or fallback App Store rating for schema + page. */
+  appStoreRating?: AppStoreRating;
 }
 
 const {
@@ -30,6 +32,7 @@ const {
   ogImage = DEFAULT_OG_IMAGE,
   jsonLd,
   faqJsonLd,
+  appStoreRating = FALLBACK_APP_STORE_RATING,
 } = Astro.props;
 
 const canonical = new URL(Astro.url.pathname, Astro.site ?? SITE_URL);
@@ -47,8 +50,8 @@ const softwareLd = {
   description,
   aggregateRating: {
     '@type': 'AggregateRating',
-    ratingValue: APP_STORE_RATING,
-    ratingCount: APP_STORE_RATING_COUNT,
+    ratingValue: appStoreRating.rating,
+    ratingCount: appStoreRating.count,
     bestRating: 5,
     worstRating: 1,
   },
@@ -112,7 +115,7 @@ const jsonLdPayload = {
     {faqJsonLd && <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />}
     <Analytics />
   </head>
-  <body>
+  <body data-app-store-id={APP_STORE_ID}>
     <a class="skip-link" href="#main">Skip to main content</a>
     <header class="site-header">
       <div class="container site-header-inner">
@@ -145,6 +148,7 @@ const jsonLdPayload = {
         </div>
       </div>
     </footer>
+    {isHome && <script src="/app-store-rating.js" defer></script>}
   </body>
 </html>
 

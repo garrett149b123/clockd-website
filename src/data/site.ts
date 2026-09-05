@@ -1,9 +1,9 @@
 export const SITE_URL = 'https://www.getclockdapp.com';
 export const APP_STORE_URL = 'https://apps.apple.com/us/app/clockd-ai-scanner/id6772232502';
 export const APP_STORE_ID = '6772232502';
-/** Live App Store rating — update when ratings change. */
+/** Fallback App Store rating if Apple’s lookup API is unreachable. */
 export const APP_STORE_RATING = 5.0;
-export const APP_STORE_RATING_COUNT = 5;
+export const APP_STORE_RATING_COUNT = 6;
 export const INSTAGRAM_URL = 'https://www.instagram.com/getclockdapp/';
 export const INSTAGRAM_HANDLE = '@getclockdapp';
 export const SUPPORT_EMAIL = 'garrett.spoor@yahoo.com';

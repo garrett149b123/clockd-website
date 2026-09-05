@@ -1,13 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import {
-  APP_STORE_RATING,
-  APP_STORE_RATING_COUNT,
   APP_STORE_URL,
   CTA_MICRO,
   CTA_PRIMARY,
   SUPPORT_EMAIL,
 } from '../data/site';
+import { formatRatingLabel, getAppStoreRating } from '../lib/appStoreRating';
+
+const storeRating = await getAppStoreRating();
+const ratingLabel = formatRatingLabel(storeRating.rating, storeRating.count);
+const ratingCountLabel =
+  storeRating.count === 1 ? '1 rating' : `${storeRating.count} ratings`;
 
 const faqs = [
   {
@@ -65,7 +69,7 @@ const faqLd = {
 const stars = '★★★★★';
 ---
 
-<BaseLayout faqJsonLd={faqLd}>
+<BaseLayout faqJsonLd={faqLd} appStoreRating={storeRating}>
   <main id="main">
     <section class="hero">
       <div class="hero-atmosphere" aria-hidden="true">
@@ -77,12 +81,8 @@ const stars = '★★★★★';
           <p class="kicker">GROCERY PRICE SCANNER</p>
           <h1>One snap tells you if that grocery price is actually a deal.</h1>
           <p class="hero-lead">
-            Snap any shelf tag and Clockd shows a deal signal, typical price range, and comparisons to Amazon,
-            Walmart, and Target — so you decide in seconds. Worth it—or walk away.
-          </p>
-          <p class="diff-line">
-            The only iPhone app that compares your shelf price to Amazon, Walmart, and Target in one snap —
-            then Flip, list, or receipt if you need them.
+            Snap a shelf tag for a deal signal, typical range, and comps vs Amazon, Walmart, and Target.
+            Worth it—or walk away.
           </p>
           <div class="hero-actions">
             <div class="cta-stack">
@@ -91,9 +91,13 @@ const stars = '★★★★★';
             </div>
             <a class="btn btn-ghost" href="#see-it">Watch a scan</a>
           </div>
-          <p class="rating-note" aria-label={`Rated ${APP_STORE_RATING} out of 5 on the App Store from ${APP_STORE_RATING_COUNT} ratings`}>
+          <p
+            class="rating-note"
+            data-app-store-rating
+            aria-label={`Rated ${storeRating.rating.toFixed(1)} out of 5 on the App Store from ${ratingCountLabel}`}
+          >
             <span class="rating-stars" aria-hidden="true">{stars}</span>
-            {APP_STORE_RATING.toFixed(1)} on the App Store · {APP_STORE_RATING_COUNT} ratings
+            <span data-app-store-rating-value>{ratingLabel}</span>
           </p>
         </div>
         <div class="hero-phone-wrap">
@@ -196,8 +200,8 @@ const stars = '★★★★★';
         <div class="section-head">
           <p class="kicker">EARLY FEEDBACK</p>
           <h2>Shoppers who hate guessing in the aisle.</h2>
-          <p>
-            Rated {APP_STORE_RATING.toFixed(1)} on the App Store.
+          <p data-app-store-rating>
+            Rated <span data-app-store-rating-value>{storeRating.rating.toFixed(1)} on the App Store · {ratingCountLabel}</span>.
             <a href={APP_STORE_URL}>Leave a review</a> after your first scan — it helps the next shopper trust Clockd.
           </p>
         </div>
