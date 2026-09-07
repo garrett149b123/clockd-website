@@ -6,7 +6,7 @@ export const APP_STORE_RATING = 5.0;
 export const APP_STORE_RATING_COUNT = 6;
 export const INSTAGRAM_URL = 'https://www.instagram.com/getclockdapp/';
 export const INSTAGRAM_HANDLE = '@getclockdapp';
-export const SUPPORT_EMAIL = 'garrett.spoor@yahoo.com';
+export const SUPPORT_EMAIL = 'hello@getclockdapp.com';
 
 export const DEFAULT_TITLE = 'Clockd | Grocery Price Scanner for iPhone';
 export const DEFAULT_DESCRIPTION =
