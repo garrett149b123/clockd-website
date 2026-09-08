@@ -10,6 +10,8 @@ import {
   INSTAGRAM_URL,
   SITE_URL,
   SUPPORT_EMAIL,
+  TIKTOK_HANDLE,
+  TIKTOK_URL,
 } from '../data/site';
 import type { AppStoreRating } from '../lib/appStoreRating';
 import { FALLBACK_APP_STORE_RATING } from '../lib/appStoreRating';
@@ -66,7 +68,7 @@ const softwareLd = {
     email: SUPPORT_EMAIL,
     url: SITE_URL,
   },
-  sameAs: [APP_STORE_URL, INSTAGRAM_URL],
+  sameAs: [APP_STORE_URL, INSTAGRAM_URL, TIKTOK_URL],
 };
 
 const extraLd = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
@@ -140,6 +142,7 @@ const jsonLdPayload = {
         <p>© {new Date().getFullYear()} Garrett Spoor · Clockd AI Scanner</p>
         <div class="footer-links">
           <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">Instagram {INSTAGRAM_HANDLE}</a>
+          <a href={TIKTOK_URL} target="_blank" rel="noopener noreferrer">TikTok {TIKTOK_HANDLE}</a>
           <a href="/#built-by">About</a>
           <a href="/privacy">Privacy</a>
           <a href="/terms">Terms</a>

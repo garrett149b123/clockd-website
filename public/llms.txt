@@ -8,6 +8,7 @@
 - URL: https://www.getclockdapp.com
 - App Store: https://apps.apple.com/us/app/clockd-ai-scanner/id6772232502
 - Instagram: https://www.instagram.com/getclockdapp/
+- TikTok: https://www.tiktok.com/@getclockdapp
 
 ## Core value
 One photo answers: is this shelf price a deal? Clockd shows a deal signal, typical price range, and online comps (Amazon, Walmart, Target). Results are AI estimates, not live register prices.
