@@ -2,13 +2,13 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 export default defineConfig({
-  site: 'https://www.getclockdapp.com',
+  site: 'https://isitworthit.io',
   compressHTML: true,
   integrations: [
     sitemap({
       serialize(item) {
         const url = item.url.replace(/\/$/, '');
-        if (url.endsWith('getclockdapp.com')) {
+        if (url.endsWith('isitworthit.io')) {
           return { ...item, changefreq: 'weekly', priority: 1 };
         }
         if (url.endsWith('/privacy') || url.endsWith('/terms')) {

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="480" height="108" viewBox="0 0 480 108" xmlns="http://www.w3.org/2000/svg">
+  <text x="28" y="38" fill="#5B9FFF" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="800">✦</text>
+  <text x="48" y="52" fill="#5B9FFF" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="900" letter-spacing="4">WORTHIT</text>
+  <text x="48" y="78" fill="#7DD3FC" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="600">AI price scanner · Save · Flip · Lists</text>
+  <line x1="48" y1="88" x2="432" y2="88" stroke="#5B9FFF" stroke-width="2" stroke-linecap="round"/>
+</svg>

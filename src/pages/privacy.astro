@@ -1,45 +1,113 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { SUPPORT_EMAIL } from '../data/site';
 ---
 
-<BaseLayout title="Privacy Policy — Clockd" description="How the Clockd grocery price scanner app handles photos, accounts, and scan history.">
-  <main class="legal-page">
+<BaseLayout
+  title="Privacy Policy — WorthIt"
+  description="How WorthIt handles photos, accounts, scan history, and the providers used to check shelf prices."
+>
+  <main class="legal-page" id="main">
     <div class="container">
+      <p class="kicker">WORTHIT</p>
       <h1>Privacy Policy</h1>
       <p class="legal-meta">
-        Effective date: May 10, 2026 · <a href="/">Clockd home</a> · <a href="/terms">Terms of Service</a>
+        Effective date: May 10, 2026 · <a href="/">WorthIt home</a> · <a href="/terms">Terms of Service</a>
       </p>
-      <p>
-        This Privacy Policy describes how Clockd (“we,” “us,” or “our”) handles information when you use the Clockd
-        mobile app and related services (the “Service”). Clockd is operated by an independent developer.
-      </p>
-      <p>
-        <strong>Contact:</strong> For privacy questions, email
-        <a href="mailto:hello@getclockdapp.com">hello@getclockdapp.com</a>.
-      </p>
-      <p>
-        <strong>Summary:</strong> Clockd helps you evaluate products using photos, barcodes, and text you submit. Scan
-        history is stored on your device. Cloud analysis sends your inputs to our backend and to AI and lookup providers.
-        We use Supabase for sign-in and usage limits. We do not sell your personal information.
-      </p>
-      <p><strong>Information you provide:</strong> Account email and password (via our auth provider), images, barcodes, and text for analysis.</p>
-      <p><strong>Automatic collection:</strong> Usage counts and plan tier tied to your account for daily limits.</p>
-      <p><strong>On your device:</strong> Analysis results are stored locally until you clear them in Settings.</p>
-      <p>
-        <strong>Cloud analysis:</strong> When signed in, images, text, and mode (Save/Flip) may be sent to Supabase Edge
-        Functions and Google Gemini. Barcodes may be sent to Open Food Facts.
-      </p>
-      <p><strong>Third parties:</strong> Supabase, Google (Gemini), Open Food Facts, and our hosting providers each have their own policies.</p>
-      <p><strong>Retailer links:</strong> The app may open third-party stores in your browser; some links may include affiliate parameters.</p>
-      <p><strong>Children:</strong> Not directed to children under 13.</p>
-      <p>
-        <strong>Your rights:</strong> Depending on where you live, you may have rights to access, correct, delete, or
-        export personal information. Contact us at <a href="mailto:hello@getclockdapp.com">hello@getclockdapp.com</a>.
-      </p>
-      <p class="legal-meta">
-        This page is hosted at getclockdapp.com. The iOS app may still reference legacy GitHub Pages URLs until a future
-        app update.
-      </p>
+      <div class="legal-shell">
+        <p>
+          This Privacy Policy describes how WorthIt (“we,” “us,” or “our”) handles information when you use the WorthIt
+          mobile app and related services (the “Service”). WorthIt is operated by an independent developer. A formal
+          legal entity name and mailing address may be added when incorporated.
+        </p>
+        <h2>Contact</h2>
+        <p>
+          For privacy questions, email <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>.
+        </p>
+        <h2>Summary</h2>
+        <p>
+          WorthIt helps you evaluate products using photos, barcodes, and text you submit. Scan history is stored on
+          your device unless you later use features that sync elsewhere. Cloud analysis, when enabled, sends your
+          inputs to our backend and to AI and lookup providers to produce results. We use Supabase for sign-in and
+          operational data such as usage limits when that is configured. We do not sell your personal information.
+        </p>
+        <h2>Information you provide</h2>
+        <p>
+          If you create an account, our authentication provider may process your email address, password (hashed by the
+          provider), and any profile metadata you add. You may also submit images (for example product or price-tag
+          photos), barcode values, and typed text (for example product names or notes) for analysis.
+        </p>
+        <h2>Information collected automatically</h2>
+        <p>
+          When cloud analysis is enabled, we may store usage counts and plan or tier data tied to your account to
+          enforce daily limits. If we add analytics or crash reporting, we will update this Policy to name those tools
+          and what they collect.
+        </p>
+        <h2>On your device</h2>
+        <p>
+          The app saves your analysis results and related data locally. When you are signed in, scan history (including
+          saved-for-later and purchased markers, and location captured for a scan when you allow it) may sync to your
+          account so it can be restored on another device. You can clear saved activity from Settings on this device;
+          signed-in users may also remove synced copies from the cloud when clearing.
+        </p>
+        <h2>How we use information</h2>
+        <p>
+          We use it to run and improve the Service, authenticate accounts, enforce limits and security, generate product
+          and price-related insights, and show links to third-party retailers. We may use it to comply with law and
+          protect rights and safety. Third-party AI providers (for example Google Gemini) apply their own terms; check
+          their documentation for whether your content may be used to improve their models.
+        </p>
+        <h2>Cloud analysis</h2>
+        <p>
+          When enabled and you are signed in (or when a custom analysis endpoint is configured), your image (if any),
+          text query, mode (for example Save or Flip), and approximate location (when you grant permission) may be sent
+          to our backend (for example Supabase Edge Functions). Our backend may call Google Gemini for interpretation.
+          For barcode-only lookups, we may send the barcode to Open Food Facts (or similar databases) with minimal
+          technical headers required by that service. Results are returned to your app. Server or provider logs may
+          temporarily retain related metadata. Signed-in scan history may also store structured fields such as product
+          name, prices you confirm, store context, and location metadata for your account.
+        </p>
+        <h2>Third parties</h2>
+        <p>
+          Third parties we rely on may include Supabase (authentication, database, serverless functions), Google (Gemini
+          API), Open Food Facts (barcode product data), and our cloud hosting provider. Each has its own privacy policy.
+        </p>
+        <h2>Retailer links</h2>
+        <p>
+          The Service may open third-party sites (for example Amazon, Walmart, Target, Kroger, or eBay) in your browser.
+          Those sites are independent and have their own practices. Some links may include affiliate parameters; see our
+          <a href="/terms">Terms of Service</a> for Amazon Associates and similar disclosures.
+        </p>
+        <h2>Retention</h2>
+        <p>
+          On-device history remains until you delete it or remove the app. Account and quota data are kept while your
+          account is active and as needed for security and legal compliance. Log retention follows our hosting
+          provider’s practices unless law requires otherwise.
+        </p>
+        <h2>Security</h2>
+        <p>We use reasonable measures to protect information. No method of transmission or storage is completely secure.</p>
+        <h2>Children</h2>
+        <p>
+          The Service is not directed to children under 13 (or the minimum age in your region). We do not knowingly
+          collect personal information from children.
+        </p>
+        <h2>Your rights</h2>
+        <p>
+          Depending on where you live, you may have rights to access, correct, delete, or export personal information, or
+          to object to certain processing. Contact <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a> for requests.
+        </p>
+        <h2>International users</h2>
+        <p>
+          Information may be processed in the United States or other countries where we or our providers operate. Those
+          countries may have different data protection laws.
+        </p>
+        <h2>Changes</h2>
+        <p>
+          We may update this Policy and will adjust the effective date. Material changes may be communicated as required
+          by law. This page is published at https://isitworthit.io/privacy.
+        </p>
+        <p>This Policy is provided for transparency and is not legal advice.</p>
+      </div>
     </div>
   </main>
 </BaseLayout>

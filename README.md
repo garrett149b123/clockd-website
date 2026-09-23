@@ -1,21 +1,21 @@
-# Clockd website
+# WorthIt website
 
-Marketing site for [Clockd AI Scanner](https://apps.apple.com/us/app/clockd-ai-scanner/id6772232502).
+Marketing site for [WorthIt](https://isitworthit.io) (App Store listing: [WorthIt AI Scanner](https://apps.apple.com/us/app/clockd-ai-scanner/id6772232502)).
 
-**Production URL:** https://getclockdapp.com
+**Production URL:** https://isitworthit.io
 
-Separate from the mobile app repo (`clockd`) and the legacy legal GitHub Pages repo (`clockd-legal`).
+The App Store URL still uses the `clockd-ai-scanner` slug. TikTok stays [@getclockdapp](https://www.tiktok.com/@getclockdapp) until that handle can be renamed. Instagram is [@getworthitapp](https://www.instagram.com/getworthitapp/).
+
+This repo is separate from the mobile app. The GitHub remote for this site is `garrett149b123/clockd-website`.
 
 ## Pages
 
 | Path | Purpose |
 |------|---------|
 | `/` | Landing page |
-| `/privacy` | Privacy policy (ready for App Store migration) |
+| `/privacy` | Privacy policy |
 | `/terms` | Terms of service |
 | `/app-ads.txt` | AdMob authorized sellers file |
-
-The iOS app still points at GitHub Pages legal URLs until the next release updates `EXPO_PUBLIC_PRIVACY_POLICY_URL`, `EXPO_PUBLIC_TERMS_OF_SERVICE_URL`, and App Store Connect metadata.
 
 ## Local development
 
@@ -35,7 +35,7 @@ Open http://localhost:4321
 
 ## Namecheap DNS → Vercel
 
-In Namecheap → Domain List → **getclockdapp.com** → **Advanced DNS**:
+In Namecheap → Domain List → **isitworthit.io** → **Advanced DNS**:
 
 | Type | Host | Value |
 |------|------|-------|
@@ -44,25 +44,20 @@ In Namecheap → Domain List → **getclockdapp.com** → **Advanced DNS**:
 
 Then in Vercel → Project → Settings → Domains, add:
 
-- `getclockdapp.com`
-- `www.getclockdapp.com` (optional redirect to apex)
+- `isitworthit.io`
+- `www.isitworthit.io` (optional redirect to apex)
 
 DNS can take up to an hour (often minutes). Vercel provisions HTTPS automatically.
 
 ## After the site is live
 
-1. Confirm https://getclockdapp.com/app-ads.txt returns the AdMob line.
-2. Confirm https://www.getclockdapp.com/sitemap-index.xml and https://www.getclockdapp.com/robots.txt.
-3. In [Google Search Console](https://search.google.com/search-console), add `getclockdapp.com`, verify, and submit `https://www.getclockdapp.com/sitemap-index.xml`.
-4. On the next App Store version (when metadata unlocks):
-   - **Marketing URL** → `https://getclockdapp.com`
-   - **Support URL** → `https://getclockdapp.com`
-   - **Privacy Policy URL** → `https://getclockdapp.com/privacy`
-   - **Terms** → `https://getclockdapp.com/terms`
-3. Update EAS env + `store.config.json` in the app repo, then ship a new build.
-4. Click **Check for updates** in AdMob after store URLs change.
+1. Confirm https://isitworthit.io/app-ads.txt returns the AdMob line.
+2. Confirm https://isitworthit.io/sitemap-index.xml and https://isitworthit.io/robots.txt.
+3. In [Google Search Console](https://search.google.com/search-console), add `isitworthit.io`, verify, and submit `https://isitworthit.io/sitemap-index.xml`.
+4. App Store Connect marketing, support, privacy, and terms URLs should point at `https://isitworthit.io`, `/privacy`, and `/terms`.
+5. Click **Check for updates** in AdMob after store URLs change.
 
 ## Stack
 
 - [Astro](https://astro.build) static site
-- Assets from App Store marketing screenshots in the app repo
+- Blue mascot and phone captures from the WorthIt app

@@ -43,7 +43,7 @@ const isHome = Astro.url.pathname === '/' || Astro.url.pathname === '';
 
 const softwareLd = {
   '@type': 'SoftwareApplication',
-  name: 'Clockd AI Scanner',
+  name: 'WorthIt',
   applicationCategory: 'ShoppingApplication',
   operatingSystem: 'iOS',
   url: SITE_URL,
@@ -86,7 +86,7 @@ const jsonLdPayload = {
     <title>{title}</title>
     <meta name="description" content={description} />
     <meta name="google-site-verification" content="UStUZVb9vMAgtwcrdEtoTOvdvh7OL5LSqpqU-eGG_P8" />
-    <meta name="theme-color" content="#84cc16" />
+    <meta name="theme-color" content="#2563eb" />
     <link rel="canonical" href={canonical} />
     <link rel="icon" href="/assets/mascot.webp" type="image/webp" />
     <link rel="icon" href="/assets/mascot.png" type="image/png" />
@@ -103,10 +103,10 @@ const jsonLdPayload = {
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonical} />
-    <meta property="og:site_name" content="Clockd" />
+    <meta property="og:site_name" content="WorthIt" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:image" content={ogImageUrl} />
-    <meta property="og:image:alt" content="Clockd grocery price scanner app on iPhone" />
+    <meta property="og:image:alt" content="WorthIt Save result showing whether a shelf price is worth it" />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
@@ -122,8 +122,11 @@ const jsonLdPayload = {
     <header class="site-header">
       <div class="container site-header-inner">
         <a class="brand" href="/">
-          <span class="brand-mark">⏰</span>
-          <span>CLOCKD</span>
+          <picture>
+            <source srcset="/assets/mascot.webp" type="image/webp" />
+            <img class="brand-mascot" src="/assets/mascot.png" alt="" width="40" height="40" />
+          </picture>
+          <span class="brand-word">WORTHIT</span>
         </a>
         <nav class="nav-links" aria-label="Primary">
           <a class="hide-mobile" href="/#how-it-works">How it works</a>
@@ -139,7 +142,16 @@ const jsonLdPayload = {
 
     <footer class="site-footer">
       <div class="container footer-grid">
-        <p>© {new Date().getFullYear()} Garrett Spoor · Clockd AI Scanner</p>
+        <div class="footer-brand">
+          <a class="brand" href="/">
+            <picture>
+              <source srcset="/assets/mascot.webp" type="image/webp" />
+              <img class="brand-mascot" src="/assets/mascot.png" alt="" width="40" height="40" />
+            </picture>
+            <span class="brand-word">WORTHIT</span>
+          </a>
+          <p>© {new Date().getFullYear()} Garrett Spoor</p>
+        </div>
         <div class="footer-links">
           <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">Instagram {INSTAGRAM_HANDLE}</a>
           <a href={TIKTOK_URL} target="_blank" rel="noopener noreferrer">TikTok {TIKTOK_HANDLE}</a>

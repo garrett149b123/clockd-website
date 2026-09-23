@@ -15,20 +15,20 @@ const ratingCountLabel =
 
 const faqs = [
   {
-    q: 'What is Clockd?',
-    a: 'Clockd is an iPhone app that tells you if a shelf price is worth it. Snap the tag, see a deal signal and typical prices, then buy or walk.',
+    q: 'What is WorthIt?',
+    a: 'WorthIt is an iPhone app that tells you if a shelf price is worth it. Snap an item, get a deal signal and typical prices, then buy or walk.',
   },
   {
     q: 'How does a scan work?',
-    a: 'Photograph the item with the price tag in frame when you can. Clockd identifies it and shows a typical range plus online prices. Results are estimates, not live register prices.',
+    a: 'Photograph the item and include the shelf price when you can. WorthIt names it, shows a typical range, and compares Amazon, Walmart, and Target. Results are estimates, not live register prices.',
   },
   {
-    q: 'What else can I do?',
-    a: 'Same app: type a grocery list and compare nearby stores, check resale on the same photo, or snap a receipt after checkout. You do not have to use those until you want them.',
+    q: 'What are Save, Flip, lists, and receipts?',
+    a: 'Save is the shelf check. Flip opens resale comps on the same photo. A grocery list compares nearby stores for one trip. A receipt snap logs the store, items, and total after checkout.',
   },
   {
-    q: 'Is Clockd free?',
-    a: 'Yes. Clockd is free on the App Store, with a daily scan limit. Clockd Pro raises that limit and removes ads while analyzing. No credit card needed to download.',
+    q: 'Is WorthIt free?',
+    a: 'Yes. WorthIt is free on the App Store, with a daily scan limit. WorthIt Pro raises that limit and removes ads while analyzing. No credit card needed to download.',
   },
 ];
 
@@ -78,12 +78,22 @@ const stars = '★★★★★';
       </div>
       <div class="container hero-grid">
         <div>
-          <p class="kicker">GROCERY PRICE SCANNER</p>
-          <h1>One snap tells you if that grocery price is actually a deal.</h1>
+          <div class="hero-mascot-row">
+            <picture>
+              <source srcset="/assets/mascot.webp" type="image/webp" />
+              <img class="hero-mascot" src="/assets/mascot.png" alt="WorthIt mascot" width="88" height="88" />
+            </picture>
+            <p class="kicker">SNAP AN ITEM</p>
+          </div>
+          <h1>Worth it—or walk away.</h1>
           <p class="hero-lead">
-            Snap a shelf tag for a deal signal, typical range, and comps vs Amazon, Walmart, and Target.
-            Worth it—or walk away.
+            Snap an item and see if the shelf price is worth it. Save compares Amazon, Walmart, and Target.
+            Flip checks resale on the same photo. Lists and receipts live in the same app.
           </p>
+          <div class="badge-row">
+            <span class="badge">Save at the shelf</span>
+            <span class="badge badge-mint">Flip for profit</span>
+          </div>
           <div class="hero-actions">
             <div class="cta-stack">
               <a class="btn btn-lime btn-hero" href={APP_STORE_URL}>{CTA_PRIMARY}</a>
@@ -101,7 +111,7 @@ const stars = '★★★★★';
           </p>
         </div>
         <div class="hero-phone-wrap">
-          <div class="demo-reel" aria-label="Clockd scan demo: home to Save result">
+          <div class="demo-reel" aria-label="WorthIt scan demo: home to Save result">
             <picture>
               <source srcset="/screenshots/home.webp" type="image/webp" />
               <img
@@ -119,7 +129,7 @@ const stars = '★★★★★';
               <img
                 class="demo-frame demo-frame-b"
                 src="/screenshots/save.png"
-                alt="Clockd Save result with Solid Deal and Amazon, Walmart, Target comps"
+                alt="WorthIt Save result with Solid Deal and Amazon, Walmart, Target comps"
                 width="360"
                 height="728"
                 fetchpriority="high"
@@ -137,23 +147,23 @@ const stars = '★★★★★';
         <div class="section-head">
           <p class="kicker">HOW IT WORKS</p>
           <h2>Three steps in the aisle.</h2>
-          <p>No modes to pick up front. Point, scan, decide.</p>
+          <p>Point at the item. See the shelf call. Then save, flip, or walk.</p>
         </div>
         <div class="steps">
           <article class="step">
             <div class="step-num">1</div>
-            <h3>Snap the tag</h3>
-            <p>Photograph the item. Include the shelf price when you can.</p>
+            <h3>Snap an item</h3>
+            <p>Photograph the product. Include the shelf price when you can.</p>
           </article>
           <article class="step">
             <div class="step-num">2</div>
-            <h3>See the deal</h3>
-            <p>Get a clear signal, a typical price range, and Amazon / Walmart / Target comps.</p>
+            <h3>See if it’s worth it</h3>
+            <p>Get a deal signal, a typical range, and Amazon, Walmart, and Target comps.</p>
           </article>
           <article class="step">
             <div class="step-num">3</div>
-            <h3>Buy or walk</h3>
-            <p>If it isn’t worth it, put it back. If it is, check out with confidence.</p>
+            <h3>Save, flip, or walk</h3>
+            <p>Keep the grocery deal, check resale on the same photo, or put it back.</p>
           </article>
         </div>
       </div>
@@ -163,33 +173,67 @@ const stars = '★★★★★';
       <div class="container">
         <div class="section-head">
           <p class="kicker">IN THE APP</p>
-          <h2>See the product, not just the pitch.</h2>
+          <h2>Save, Flip, lists, and receipts.</h2>
           <p>
-            Unlike Flipp or basket apps that stop at coupons or lists, Clockd is built for the shelf decision —
-            Save, Flip, list, and receipt in one place.
+            The first job is the shelf decision. Flip, a grocery list, and a receipt snap are the same WorthIt app
+            when you need them.
           </p>
         </div>
-        <div class="shot-strip">
-          <figure class="shot-card">
-            <picture>
-              <source srcset="/screenshots/save.webp" type="image/webp" />
-              <img src="/screenshots/save.png" alt="Clockd Save mode deal signal and online compare" width="360" height="728" loading="lazy" decoding="async" />
-            </picture>
-            <figcaption>Save — shelf vs online</figcaption>
-          </figure>
+        <div class="feature-grid">
+          <article class="feature-card">
+            <div class="feature-copy">
+              <span class="feature-tag feature-tag-lime">SAVE</span>
+              <h3>Is the shelf price worth it?</h3>
+              <p>
+                WorthIt names the item, shows a typical range, and compares Amazon, Walmart, and Target so you can
+                decide before it goes in the cart.
+              </p>
+            </div>
+            <div class="feature-shot">
+              <picture>
+                <source srcset="/screenshots/save.webp" type="image/webp" />
+                <img src="/screenshots/save.png" alt="WorthIt Save result with a deal signal and Amazon, Walmart, and Target prices" width="360" height="728" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+          </article>
+          <article class="feature-card reverse">
+            <div class="feature-copy">
+              <span class="feature-tag">FLIP</span>
+              <h3>Spot flip profit on the same scan.</h3>
+              <p>
+                Open Flip after Save for a resale range, estimated profit, and a buy-or-pass signal. One photo, two
+                questions.
+              </p>
+            </div>
+            <div class="feature-shot">
+              <picture>
+                <source srcset="/screenshots/flip.webp" type="image/webp" />
+                <img src="/screenshots/flip.png" alt="WorthIt Flip result with estimated resale profit" width="360" height="728" loading="lazy" decoding="async" />
+              </picture>
+            </div>
+          </article>
+        </div>
+        <div class="shot-strip shot-follow">
           <figure class="shot-card">
             <picture>
               <source srcset="/screenshots/list.webp" type="image/webp" />
-              <img src="/screenshots/list.png" alt="Clockd grocery list compare across nearby stores" width="360" height="728" loading="lazy" decoding="async" />
+              <img src="/screenshots/list.png" alt="WorthIt grocery list compare across nearby stores" width="360" height="728" loading="lazy" decoding="async" />
             </picture>
             <figcaption>List — cheapest one-stop trip</figcaption>
           </figure>
           <figure class="shot-card">
             <picture>
               <source srcset="/screenshots/receipt.webp" type="image/webp" />
-              <img src="/screenshots/receipt.png" alt="Clockd receipt trip with store, items, and total" width="360" height="728" loading="lazy" decoding="async" />
+              <img src="/screenshots/receipt.png" alt="WorthIt receipt with store, items, and total" width="360" height="728" loading="lazy" decoding="async" />
             </picture>
             <figcaption>Receipt — log the whole run</figcaption>
+          </figure>
+          <figure class="shot-card">
+            <picture>
+              <source srcset="/screenshots/activity.webp" type="image/webp" />
+              <img src="/screenshots/activity.png" alt="WorthIt activity with grocery saved and flip profit" width="360" height="728" loading="lazy" decoding="async" />
+            </picture>
+            <figcaption>Activity — track what counts</figcaption>
           </figure>
         </div>
       </div>
@@ -202,7 +246,7 @@ const stars = '★★★★★';
           <h2>Shoppers who hate guessing in the aisle.</h2>
           <p data-app-store-rating>
             Rated <span data-app-store-rating-value>{storeRating.rating.toFixed(1)} on the App Store · {ratingCountLabel}</span>.
-            <a href={APP_STORE_URL}>Leave a review</a> after your first scan — it helps the next shopper trust Clockd.
+            <a href={APP_STORE_URL}>Leave a review</a> after your first scan — it helps the next shopper trust WorthIt.
           </p>
         </div>
         <div class="testimonial-grid">
@@ -227,59 +271,20 @@ const stars = '★★★★★';
           <p class="kicker">BUILT BY</p>
           <h2>Garrett Spoor</h2>
           <p>
-            I built Clockd after one too many aisle moments of “is this actually a deal?” Coupons and shopping lists
-            help after you’ve already decided — Clockd is for the second before you put it in the cart. Independent
-            indie app. Questions? <a href={`mailto:${SUPPORT_EMAIL}`}>Email me</a>.
+            I built WorthIt for the second before an item goes in the cart: snap it, see if the shelf price is worth
+            it, then save, flip, or walk. Independent indie app. Questions?
+            <a href={`mailto:${SUPPORT_EMAIL}`}>Email me</a>.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt" id="features">
-      <div class="container feature-grid">
-        <article class="feature-card">
-          <div class="feature-copy">
-            <span class="feature-tag">THE SCAN</span>
-            <h3>Is the shelf price worth it?</h3>
-            <p>
-              That is the whole app the first time you open it. Clockd names the item, shows a typical range, and
-              compares Amazon, Walmart, and Target so you can decide in seconds.
-            </p>
-          </div>
-          <div class="feature-shot">
-            <picture>
-              <source srcset="/screenshots/flip.webp" type="image/webp" />
-              <img src="/screenshots/flip.png" alt="Clockd Flip result with resale profit estimate" width="360" height="728" loading="lazy" decoding="async" />
-            </picture>
-          </div>
-        </article>
-      </div>
-
-      <div class="container also">
-        <p class="also-kicker">Later, if you want</p>
-        <div class="also-grid">
-          <article class="also-card">
-            <h3>Grocery list</h3>
-            <p>Type milk, eggs, Cheerios. Clockd prices the basket at nearby stores.</p>
-          </article>
-          <article class="also-card">
-            <h3>Flip</h3>
-            <p>Same photo, resale range and estimated profit—for thrift finds.</p>
-          </article>
-          <article class="also-card">
-            <h3>Receipts</h3>
-            <p>Snap the tape after checkout. Clockd logs the store, items, and total.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="faq">
+    <section class="section section-alt" id="faq">
       <div class="container">
         <div class="section-head">
           <p class="kicker">FAQ</p>
           <h2>Simple answers.</h2>
-          <p>What Clockd is, how a scan works, and what it costs.</p>
+          <p>What WorthIt is, how a scan works, and what it costs.</p>
         </div>
         <div class="faq-list">
           {faqs.map((item) => (
@@ -293,11 +298,11 @@ const stars = '★★★★★';
     </section>
 
     <section class="cta-band">
-      <h2>Download Clockd free on iPhone.</h2>
+      <h2>Worth it—or walk away.</h2>
       <p class="diff-line diff-line-on-dark">
-        The only app that compares shelf price to Amazon, Walmart, and Target in one snap.
+        Snap an item. WorthIt compares the shelf price to Amazon, Walmart, and Target before you buy.
       </p>
-      <p>No credit card to download. Daily scan limit on free — Pro if you scan a lot.</p>
+      <p>Free to download. Daily scan limit on the free plan — WorthIt Pro if you scan a lot.</p>
       <div class="cta-stack cta-stack-center">
         <a class="btn btn-lime btn-hero" href={APP_STORE_URL}>{CTA_PRIMARY}</a>
         <p class="cta-micro cta-micro-on-dark">{CTA_MICRO}</p>
