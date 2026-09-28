@@ -94,10 +94,11 @@ img {
   text-decoration: none;
 }
 
-.brand-mascot {
-  width: 2.35rem;
-  height: 2.35rem;
+.brand-mark {
+  width: 2.2rem;
+  height: 2.2rem;
   object-fit: contain;
+  flex-shrink: 0;
 }
 
 .brand-word {

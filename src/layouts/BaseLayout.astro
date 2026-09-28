@@ -88,9 +88,9 @@ const jsonLdPayload = {
     <meta name="google-site-verification" content="UStUZVb9vMAgtwcrdEtoTOvdvh7OL5LSqpqU-eGG_P8" />
     <meta name="theme-color" content="#2563eb" />
     <link rel="canonical" href={canonical} />
-    <link rel="icon" href="/assets/mascot.webp" type="image/webp" />
-    <link rel="icon" href="/assets/mascot.png" type="image/png" />
-    <link rel="apple-touch-icon" href="/assets/mascot.png" />
+    <link rel="icon" href="/assets/favicon.png" type="image/png" />
+    <link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
     <meta name="apple-itunes-app" content={`app-id=${APP_STORE_ID}`} />
     {isHome && (
       <>
@@ -122,10 +122,7 @@ const jsonLdPayload = {
     <header class="site-header">
       <div class="container site-header-inner">
         <a class="brand" href="/">
-          <picture>
-            <source srcset="/assets/mascot.webp" type="image/webp" />
-            <img class="brand-mascot" src="/assets/mascot.png" alt="" width="40" height="40" />
-          </picture>
+          <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="36" height="36" />
           <span class="brand-word">WORTHIT</span>
         </a>
         <nav class="nav-links" aria-label="Primary">
@@ -144,10 +141,7 @@ const jsonLdPayload = {
       <div class="container footer-grid">
         <div class="footer-brand">
           <a class="brand" href="/">
-            <picture>
-              <source srcset="/assets/mascot.webp" type="image/webp" />
-              <img class="brand-mascot" src="/assets/mascot.png" alt="" width="40" height="40" />
-            </picture>
+            <img class="brand-mark" src="/assets/logo-mark.svg" alt="" width="36" height="36" />
             <span class="brand-word">WORTHIT</span>
           </a>
           <p>© {new Date().getFullYear()} Garrett Spoor</p>
