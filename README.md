@@ -4,7 +4,7 @@ Marketing site for [WorthIt](https://isitworthit.io) (App Store listing: [WorthI
 
 **Production URL:** https://isitworthit.io
 
-The App Store URL still uses the `clockd-ai-scanner` slug. TikTok stays [@getclockdapp](https://www.tiktok.com/@getclockdapp) until that handle can be renamed. Instagram is [@getworthitapp](https://www.instagram.com/getworthitapp/).
+The App Store URL still uses the `clockd-ai-scanner` slug. Instagram and TikTok are both [@getworthitapp](https://www.instagram.com/getworthitapp/).
 
 This repo is separate from the mobile app. The GitHub remote for this site is `garrett149b123/clockd-website`.
 

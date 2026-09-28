@@ -4,11 +4,10 @@ export const APP_STORE_ID = '6772232502';
 /** Fallback App Store rating if Apple’s lookup API is unreachable. */
 export const APP_STORE_RATING = 5.0;
 export const APP_STORE_RATING_COUNT = 6;
-/** Update TikTok when the handle can be renamed (after Sep 24). */
 export const INSTAGRAM_URL = 'https://www.instagram.com/getworthitapp/';
 export const INSTAGRAM_HANDLE = '@getworthitapp';
-export const TIKTOK_URL = 'https://www.tiktok.com/@getclockdapp';
-export const TIKTOK_HANDLE = '@getclockdapp';
+export const TIKTOK_URL = 'https://www.tiktok.com/@getworthitapp';
+export const TIKTOK_HANDLE = '@getworthitapp';
 export const SUPPORT_EMAIL = 'hello@isitworthit.io';
 
 export const DEFAULT_TITLE = 'WorthIt | Is the shelf price worth it?';
