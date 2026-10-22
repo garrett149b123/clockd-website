@@ -1,0 +1,70 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+import { APP_STORE_URL, CTA_MICRO, CTA_PRIMARY, SITE_URL } from '../../data/site';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const published = post.data.pubDate.toISOString();
+const modified = (post.data.updatedDate ?? post.data.pubDate).toISOString();
+const pageUrl = `${SITE_URL}/blog/${post.id}`;
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.data.title,
+  description: post.data.description,
+  datePublished: published,
+  dateModified: modified,
+  mainEntityOfPage: pageUrl,
+  author: {
+    '@type': 'Person',
+    name: 'Garrett Spoor',
+    url: SITE_URL,
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'WorthIt',
+    url: SITE_URL,
+  },
+};
+---
+
+<BaseLayout
+  title={`${post.data.title} | WorthIt`}
+  description={post.data.description}
+  ogType="article"
+  articleJsonLd={articleJsonLd}
+>
+  <main id="main" class="blog-page">
+    <article class="container blog-article">
+      <header class="blog-article-head">
+        <p class="kicker"><a href="/blog">Blog</a></p>
+        <h1>{post.data.title}</h1>
+        <time datetime={published}>
+          {post.data.pubDate.toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            timeZone: 'UTC',
+          })}
+        </time>
+      </header>
+      <div class="blog-prose">
+        <Content />
+      </div>
+      <div class="blog-cta">
+        <a class="btn btn-lime btn-hero" href={APP_STORE_URL}>{CTA_PRIMARY}</a>
+        <p class="cta-micro">{CTA_MICRO}</p>
+      </div>
+    </article>
+  </main>
+</BaseLayout>

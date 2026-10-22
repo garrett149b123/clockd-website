@@ -14,6 +14,9 @@ export default defineConfig({
         if (url.endsWith('/privacy') || url.endsWith('/terms')) {
           return { ...item, changefreq: 'monthly', priority: 0.3 };
         }
+        if (url.endsWith('/blog')) {
+          return { ...item, changefreq: 'weekly', priority: 0.8 };
+        }
         return { ...item, changefreq: 'weekly', priority: 0.7 };
       },
     }),

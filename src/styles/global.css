@@ -871,6 +871,130 @@ img {
   font-size: 0.95rem;
 }
 
+.blog-page {
+  padding: 3.5rem 0 4.5rem;
+}
+
+.blog-head h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 0.75rem;
+}
+
+.blog-list {
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.blog-list-home {
+  max-width: none;
+}
+
+@media (min-width: 720px) {
+  .blog-list-home {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.blog-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.35rem;
+}
+
+.blog-card time {
+  display: block;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+  margin-bottom: 0.45rem;
+}
+
+.blog-card h2,
+.blog-card h3 {
+  font-size: 1.25rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.45rem;
+}
+
+.blog-card h2 a,
+.blog-card h3 a {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.blog-card h2 a:hover,
+.blog-card h3 a:hover {
+  color: var(--mint);
+}
+
+.blog-card p {
+  color: var(--text-secondary);
+  margin-bottom: 0.85rem;
+}
+
+.blog-more {
+  font-weight: 800;
+}
+
+.blog-article {
+  max-width: 40rem;
+}
+
+.blog-article-head h1 {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  letter-spacing: -0.03em;
+  line-height: 1.12;
+  margin: 0.4rem 0 0.75rem;
+}
+
+.blog-article-head time {
+  color: var(--text-muted);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.blog-prose {
+  margin-top: 1.75rem;
+  color: var(--text-secondary);
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.blog-prose h2 {
+  color: var(--text);
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  margin: 1.75rem 0 0.6rem;
+}
+
+.blog-prose p,
+.blog-prose li {
+  margin-bottom: 0.9rem;
+}
+
+.blog-prose ul {
+  padding-left: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.blog-prose a {
+  font-weight: 700;
+}
+
+.blog-cta {
+  margin-top: 2.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.45rem;
+}
+
 @media (max-width: 900px) {
   .hero-grid,
   .feature-card {

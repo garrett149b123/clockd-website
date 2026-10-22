@@ -12,7 +12,7 @@
 - Terms: https://isitworthit.io/terms
 - App Store: https://apps.apple.com/us/app/clockd-ai-scanner/id6772232502
 - Instagram: https://www.instagram.com/getworthitapp/
-- TikTok: https://www.tiktok.com/@getclockdapp
+- TikTok: https://www.tiktok.com/@getworthitapp
 
 ## Core value
 One photo answers: is this shelf price worth it? WorthIt shows a deal signal, a typical price range, and online comps (Amazon, Walmart, Target). Results are AI estimates, not live register prices.
@@ -28,6 +28,7 @@ Free to download with a daily analysis limit. WorthIt Pro unlocks a higher daily
 
 ## Pages
 - / — Marketing landing page
+- /blog — Short tutorials (shelf checks and flips)
 - /privacy — Privacy policy
 - /terms — Terms of service
 - /app-ads.txt — Authorized digital sellers

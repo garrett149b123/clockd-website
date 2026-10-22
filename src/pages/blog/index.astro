@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { SITE_URL } from '../../data/site';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
+);
+
+const title = 'WorthIt blog | Shelf checks and flips';
+const description =
+  'Short WorthIt tutorials: photograph a shelf tag and decide if it is worth it, or check resale before you flip an item.';
+---
+
+<BaseLayout title={title} description={description}>
+  <main id="main" class="blog-page">
+    <div class="container">
+      <header class="section-head blog-head">
+        <p class="kicker">BLOG</p>
+        <h1>Short guides for the aisle.</h1>
+        <p>One idea a week. Scan, decide, then get back to shopping.</p>
+      </header>
+      <ul class="blog-list">
+        {posts.map((post) => (
+          <li>
+            <article class="blog-card">
+              <time datetime={post.data.pubDate.toISOString()}>
+                {post.data.pubDate.toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric',
+                  timeZone: 'UTC',
+                })}
+              </time>
+              <h2><a href={`/blog/${post.id}`}>{post.data.title}</a></h2>
+              <p>{post.data.description}</p>
+              <a class="blog-more" href={`/blog/${post.id}`}>Read</a>
+            </article>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </main>
+  <script type="application/ld+json" set:html={JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Blog',
+    name: 'WorthIt blog',
+    url: `${SITE_URL}/blog`,
+    description,
+  })} />
+</BaseLayout>

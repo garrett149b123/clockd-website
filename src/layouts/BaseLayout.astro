@@ -24,6 +24,10 @@ interface Props {
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   /** Standalone FAQPage JSON-LD for rich results. */
   faqJsonLd?: Record<string, unknown>;
+  /** Article JSON-LD for blog posts. */
+  articleJsonLd?: Record<string, unknown>;
+  /** Open Graph type. Blog posts use article. */
+  ogType?: 'website' | 'article';
   /** Live or fallback App Store rating for schema + page. */
   appStoreRating?: AppStoreRating;
 }
@@ -34,6 +38,8 @@ const {
   ogImage = DEFAULT_OG_IMAGE,
   jsonLd,
   faqJsonLd,
+  articleJsonLd,
+  ogType = 'website',
   appStoreRating = FALLBACK_APP_STORE_RATING,
 } = Astro.props;
 
@@ -101,7 +107,7 @@ const jsonLdPayload = {
 
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:url" content={canonical} />
     <meta property="og:site_name" content="WorthIt" />
     <meta property="og:locale" content="en_US" />
@@ -115,6 +121,7 @@ const jsonLdPayload = {
 
     <script type="application/ld+json" set:html={JSON.stringify(jsonLdPayload)} />
     {faqJsonLd && <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />}
+    {articleJsonLd && <script type="application/ld+json" set:html={JSON.stringify(articleJsonLd)} />}
     <Analytics />
   </head>
   <body data-app-store-id={APP_STORE_ID}>
@@ -129,6 +136,7 @@ const jsonLdPayload = {
           <a class="hide-mobile" href="/#how-it-works">How it works</a>
           <a class="hide-mobile" href="/#see-it">See it</a>
           <a class="hide-mobile" href="/#built-by">Built by</a>
+          <a class="hide-mobile" href="/blog">Blog</a>
           <a class="hide-mobile" href="/#faq">FAQ</a>
           <a class="btn btn-lime" href={APP_STORE_URL}>Download free</a>
         </nav>
@@ -149,6 +157,7 @@ const jsonLdPayload = {
         <div class="footer-links">
           <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">Instagram {INSTAGRAM_HANDLE}</a>
           <a href={TIKTOK_URL} target="_blank" rel="noopener noreferrer">TikTok {TIKTOK_HANDLE}</a>
+          <a href="/blog">Blog</a>
           <a href="/#built-by">About</a>
           <a href="/privacy">Privacy</a>
           <a href="/terms">Terms</a>
