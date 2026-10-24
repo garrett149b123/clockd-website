@@ -22,6 +22,7 @@ One photo answers: is this shelf price worth it? WorthIt shows a deal signal, a 
 - Flip: resale range and profit estimate on the same scan
 - Grocery list compare across nearby stores
 - Receipt trips: log store, line items, and total after checkout
+- Fuel: snap a pump price and see nearby gas stations. Nearby prices are estimates — verify on the pump or sign.
 
 ## Pricing
 Free to download with a daily analysis limit. WorthIt Pro unlocks a higher daily limit and ad-free analyzing. No credit card required to download.
