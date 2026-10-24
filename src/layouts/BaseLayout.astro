@@ -74,6 +74,11 @@ const softwareLd = {
     email: SUPPORT_EMAIL,
     url: SITE_URL,
   },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    email: SUPPORT_EMAIL,
+    contactType: 'customer support',
+  },
   sameAs: [APP_STORE_URL, INSTAGRAM_URL, TIKTOK_URL],
 };
 
@@ -161,7 +166,7 @@ const jsonLdPayload = {
           <a href="/#built-by">About</a>
           <a href="/privacy">Privacy</a>
           <a href="/terms">Terms</a>
-          <a href={`mailto:${SUPPORT_EMAIL}`}>Support</a>
+          <a href={`mailto:${SUPPORT_EMAIL}`}>{SUPPORT_EMAIL}</a>
           <a href={APP_STORE_URL}>App Store</a>
         </div>
       </div>

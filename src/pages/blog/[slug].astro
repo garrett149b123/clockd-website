@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
-import { APP_STORE_URL, CTA_MICRO, CTA_PRIMARY, SITE_URL } from '../../data/site';
+import { APP_STORE_URL, CTA_MICRO, CTA_PRIMARY, SITE_URL, SUPPORT_EMAIL } from '../../data/site';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -34,6 +34,7 @@ const articleJsonLd = {
     '@type': 'Organization',
     name: 'WorthIt',
     url: SITE_URL,
+    email: SUPPORT_EMAIL,
   },
 };
 ---
