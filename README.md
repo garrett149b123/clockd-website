@@ -1,8 +1,8 @@
 # WorthIt website
 
-Marketing site for [WorthIt](https://isitworthit.io) (App Store listing: [WorthIt AI Scanner](https://apps.apple.com/us/app/clockd-ai-scanner/id6772232502)).
+Marketing site for [WorthIt](https://www.isitworthit.io) (App Store listing: [WorthIt AI Scanner](https://apps.apple.com/us/app/clockd-ai-scanner/id6772232502)).
 
-**Production URL:** https://isitworthit.io
+**Production URL:** https://www.isitworthit.io
 
 The App Store URL still uses the `clockd-ai-scanner` slug. Instagram and TikTok are both [@getworthitapp](https://www.instagram.com/getworthitapp/).
 
@@ -45,16 +45,16 @@ In Namecheap → Domain List → **isitworthit.io** → **Advanced DNS**:
 Then in Vercel → Project → Settings → Domains, add:
 
 - `isitworthit.io`
-- `www.isitworthit.io` (optional redirect to apex)
+- `www.isitworthit.io` (canonical host; apex redirects here)
 
 DNS can take up to an hour (often minutes). Vercel provisions HTTPS automatically.
 
 ## After the site is live
 
-1. Confirm https://isitworthit.io/app-ads.txt returns the AdMob line.
-2. Confirm https://isitworthit.io/sitemap-index.xml and https://isitworthit.io/robots.txt.
-3. In [Google Search Console](https://search.google.com/search-console), add `isitworthit.io`, verify, and submit `https://isitworthit.io/sitemap-index.xml`.
-4. App Store Connect marketing, support, privacy, and terms URLs should point at `https://isitworthit.io`, `/privacy`, and `/terms`.
+1. Confirm https://www.isitworthit.io/app-ads.txt returns the AdMob line.
+2. Confirm https://www.isitworthit.io/sitemap-index.xml and https://www.isitworthit.io/robots.txt.
+3. In [Google Search Console](https://search.google.com/search-console), add `isitworthit.io`, verify, and submit `https://www.isitworthit.io/sitemap-index.xml`.
+4. App Store Connect marketing, support, privacy, and terms URLs should point at `https://www.isitworthit.io`, `/privacy`, and `/terms`.
 5. Click **Check for updates** in AdMob after store URLs change.
 
 ## Stack

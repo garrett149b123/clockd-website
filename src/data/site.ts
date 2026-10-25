@@ -1,4 +1,4 @@
-export const SITE_URL = 'https://isitworthit.io';
+export const SITE_URL = 'https://www.isitworthit.io';
 export const APP_STORE_URL = 'https://apps.apple.com/us/app/clockd-ai-scanner/id6772232502';
 export const APP_STORE_ID = '6772232502';
 /** Fallback App Store rating if Apple’s lookup API is unreachable. */
