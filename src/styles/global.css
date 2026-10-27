@@ -959,11 +959,37 @@ img {
   font-size: 0.9rem;
 }
 
+.blog-hero {
+  margin: 1.5rem 0 0;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  background: var(--surface);
+}
+
+.blog-hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
 .blog-prose {
   margin-top: 1.75rem;
   color: var(--text-secondary);
   font-size: 1.05rem;
   line-height: 1.7;
+}
+
+.blog-prose img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 1.25rem 0 1.5rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--surface);
 }
 
 .blog-prose h2 {

@@ -42,6 +42,7 @@ const articleJsonLd = {
 <BaseLayout
   title={`${post.data.title} | WorthIt`}
   description={post.data.description}
+  ogImage={post.data.ogImage}
   ogType="article"
   articleJsonLd={articleJsonLd}
 >
@@ -59,6 +60,18 @@ const articleJsonLd = {
           })}
         </time>
       </header>
+      {post.data.heroImage && (
+        <figure class="blog-hero">
+          <img
+            src={post.data.heroImage}
+            alt={post.data.heroAlt ?? ''}
+            width="1200"
+            height="675"
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
+      )}
       <div class="blog-prose">
         <Content />
       </div>
