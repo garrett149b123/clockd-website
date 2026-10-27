@@ -2,9 +2,9 @@
 title: Log a receipt after checkout
 description: Photograph the paper receipt. WorthIt pulls the store, the lines, and the total so the trip is saved — then you can check a line or add staples to a list.
 pubDate: 2026-10-27
-ogImage: /blog/receipt-groceries.jpg
-heroImage: /blog/receipt-groceries.jpg
-heroAlt: Grocery staples and a folded receipt on a checkout counter
+ogImage: /blog/receipt-in-app.png
+heroImage: /blog/receipt-in-app.webp
+heroAlt: WorthIt receipt screen showing the store, item lines, and trip total
 ---
 
 Checkout is done. The bag is in the car. The open question is whether that trip disappears into a crumpled strip of paper, or whether you can open it later when you want the store, the lines, and the total in one place.
@@ -26,8 +26,6 @@ WorthIt reads the trip and shows:
 - The trip total.
 
 Those prices are from the paper you photographed. They are not live aisle comps and they are not a second guess of what the register charged.
-
-![WorthIt receipt screen with store total and item lines](/blog/receipt-in-app.webp)
 
 ## Save the trip, then use it
 
