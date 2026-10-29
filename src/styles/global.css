@@ -787,11 +787,28 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem 1.25rem;
+  align-items: center;
 }
 
 .footer-links a {
   color: var(--text-secondary);
   font-weight: 600;
+}
+
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.footer-social:hover {
+  color: var(--mint);
+}
+
+.footer-social-icon {
+  width: 1.05rem;
+  height: 1.05rem;
+  flex-shrink: 0;
 }
 
 .legal-page {
