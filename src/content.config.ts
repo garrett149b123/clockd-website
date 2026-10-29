@@ -12,6 +12,8 @@ const blog = defineCollection({
     ogImage: z.string().optional(),
     heroImage: z.string().optional(),
     heroAlt: z.string().optional(),
+    /** phone = tall app screenshot; banner = wide header image. */
+    heroStyle: z.enum(['phone', 'banner']).default('phone'),
   }),
 });
 

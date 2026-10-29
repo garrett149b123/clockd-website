@@ -29,7 +29,7 @@ Free to download with a daily analysis limit. WorthIt Pro unlocks a higher daily
 
 ## Pages
 - / — Marketing landing page
-- /blog — Short tutorials (shelf checks, flips, gas, grocery lists, and receipts)
+- /blog — Short tutorials (shelf checks, Black Friday price checks, flips, gas, grocery lists, and receipts)
 - /privacy — Privacy policy
 - /terms — Terms of service
 - /app-ads.txt — Authorized digital sellers

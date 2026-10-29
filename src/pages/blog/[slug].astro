@@ -61,12 +61,12 @@ const articleJsonLd = {
         </time>
       </header>
       {post.data.heroImage && (
-        <figure class="blog-hero">
+        <figure class:list={['blog-hero', post.data.heroStyle === 'banner' && 'blog-hero-banner']}>
           <img
             src={post.data.heroImage}
             alt={post.data.heroAlt ?? ''}
-            width="360"
-            height="728"
+            width={post.data.heroStyle === 'banner' ? 1600 : 360}
+            height={post.data.heroStyle === 'banner' ? 900 : 728}
             loading="eager"
             decoding="async"
           />
