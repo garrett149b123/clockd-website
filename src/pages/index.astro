@@ -40,19 +40,19 @@ const testimonials = [
   {
     quote: 'One snap and I knew the shelf tag wasn’t a deal. Put it back before I wasted the trip.',
     name: 'Alex M.',
-    detail: 'Early tester · grocery shopper',
+    detail: 'Early tester, grocery shopper',
     initials: 'AM',
   },
   {
     quote: 'I typed my staples, compared nearby stores, and picked the cheaper one-stop trip in under a minute.',
     name: 'Jordan L.',
-    detail: 'Early tester · list compare',
+    detail: 'Early tester, list compare',
     initials: 'JL',
   },
   {
     quote: 'Scanned a thrift find, flipped to resale on the same photo, and skipped a bad buy.',
     name: 'Riley S.',
-    detail: 'Early tester · Flip',
+    detail: 'Early tester, Flip',
     initials: 'RS',
   },
 ];
@@ -86,7 +86,7 @@ const stars = '★★★★★';
             <img class="hero-mark" src="/assets/logo-mark.svg" alt="" width="72" height="72" />
             <p class="kicker">SNAP AN ITEM</p>
           </div>
-          <h1>Worth it—or walk away.</h1>
+          <h1>Worth it or walk away.</h1>
           <p class="hero-lead">
             Snap an item and see if the shelf price is worth it. Save compares Amazon, Walmart, and Target.
             Flip checks resale on the same photo. Lists and receipts live in the same app.
@@ -220,21 +220,21 @@ const stars = '★★★★★';
               <source srcset="/screenshots/list.webp" type="image/webp" />
               <img src="/screenshots/list.png" alt="WorthIt grocery list compare across nearby stores" width="360" height="728" loading="lazy" decoding="async" />
             </picture>
-            <figcaption>List — cheapest one-stop trip</figcaption>
+            <figcaption>List: cheapest one-stop trip</figcaption>
           </figure>
           <figure class="shot-card">
             <picture>
               <source srcset="/screenshots/receipt.webp" type="image/webp" />
               <img src="/screenshots/receipt.png" alt="WorthIt receipt with store, items, and total" width="360" height="728" loading="lazy" decoding="async" />
             </picture>
-            <figcaption>Receipt — log the whole run</figcaption>
+            <figcaption>Receipt: log the whole run</figcaption>
           </figure>
           <figure class="shot-card">
             <picture>
               <source srcset="/screenshots/activity.webp" type="image/webp" />
               <img src="/screenshots/activity.png" alt="WorthIt activity with grocery saved and flip profit" width="360" height="728" loading="lazy" decoding="async" />
             </picture>
-            <figcaption>Activity — track what counts</figcaption>
+            <figcaption>Activity: track what counts</figcaption>
           </figure>
         </div>
       </div>
@@ -246,8 +246,8 @@ const stars = '★★★★★';
           <p class="kicker">EARLY FEEDBACK</p>
           <h2>Shoppers who hate guessing in the aisle.</h2>
           <p data-app-store-rating>
-            Rated <span data-app-store-rating-value>{storeRating.rating.toFixed(1)} on the App Store · {ratingCountLabel}</span>.
-            <a href={APP_STORE_URL}>Leave a review</a> after your first scan — it helps the next shopper trust WorthIt.
+            Rated <span data-app-store-rating-value>{storeRating.rating.toFixed(1)} on the App Store, {ratingCountLabel}</span>.
+            <a href={APP_STORE_URL}>Leave a review</a> after your first scan. It helps the next shopper trust WorthIt.
           </p>
         </div>
         <div class="testimonial-grid">
@@ -320,11 +320,11 @@ const stars = '★★★★★';
     </section>
 
     <section class="cta-band">
-      <h2>Worth it—or walk away.</h2>
+      <h2>Worth it or walk away.</h2>
       <p class="diff-line diff-line-on-dark">
         Snap an item. WorthIt compares the shelf price to Amazon, Walmart, and Target before you buy.
       </p>
-      <p>Free to download. Daily scan limit on the free plan — WorthIt Pro if you scan a lot.</p>
+      <p>Free to download. Daily scan limit on the free plan. WorthIt Pro if you scan a lot.</p>
       <div class="cta-stack cta-stack-center">
         <a class="btn btn-lime btn-hero" href={APP_STORE_URL}>{CTA_PRIMARY}</a>
         <p class="cta-micro cta-micro-on-dark">{CTA_MICRO}</p>

@@ -18,7 +18,7 @@
       var ratingText = (Math.round(rating * 10) / 10).toFixed(1);
       var countRounded = Math.round(count);
       var countText = countRounded === 1 ? '1 rating' : countRounded + ' ratings';
-      var label = ratingText + ' on the App Store · ' + countText;
+      var label = ratingText + ' on the App Store, ' + countText;
 
       nodes.forEach(function (el) {
         var value = el.querySelector('[data-app-store-rating-value]');

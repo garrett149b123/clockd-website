@@ -54,5 +54,5 @@ export async function getAppStoreRating(): Promise<AppStoreRating> {
 export function formatRatingLabel(rating: number, count: number): string {
   const ratingText = rating.toFixed(1);
   const countText = count === 1 ? '1 rating' : `${count} ratings`;
-  return `${ratingText} on the App Store · ${countText}`;
+  return `${ratingText} on the App Store, ${countText}`;
 }

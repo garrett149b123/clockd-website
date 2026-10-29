@@ -28,7 +28,7 @@ Those comps are estimates, not the live register price at the store you are stan
 
 ## Buy, wait, or walk
 
-If the shelf price sits under the typical range and under the online comps, it is a reasonable buy even in a crowded aisle. If the tag is higher, put it back — or wait and buy it online later.
+If the shelf price sits under the typical range and under the online comps, it is a reasonable buy even in a crowded aisle. If the tag is higher, put it back, or wait and buy it online later.
 
 If the sale digits were cut off in the photo, add the shelf price yourself so the comparison still uses the number on the sign.
 

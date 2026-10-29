@@ -1,6 +1,6 @@
 # WorthIt
 
-> Worth it—or walk away. Snap an item on iPhone and see if the shelf price is worth it.
+> Worth it or walk away. Snap an item on iPhone and see if the shelf price is worth it.
 
 ## Product
 - Name: WorthIt
@@ -23,18 +23,18 @@ One photo answers: is this shelf price worth it? WorthIt shows a deal signal, a 
 - Flip: resale range and profit estimate on the same scan
 - Grocery list compare across nearby stores
 - Receipt trips: log store, line items, and total after checkout
-- Fuel: snap a pump price and see nearby gas stations. Nearby prices are estimates — verify on the pump or sign.
+- Fuel: snap a pump price and see nearby gas stations. Nearby prices are estimates. Verify on the pump or sign.
 
 ## Pricing
 Free to download with a daily analysis limit. WorthIt Pro unlocks a higher daily limit and ad-free analyzing. No credit card required to download.
 
 ## Pages
-- / — Marketing landing page
-- /blog — Short tutorials (shelf vs Amazon/Walmart/Target, Black Friday checks, flips, gas, grocery lists, and receipts)
-- /privacy — Privacy policy
-- /terms — Terms of service
-- /app-ads.txt — Authorized digital sellers
-- /sitemap-index.xml — XML sitemap
+- /: Marketing landing page
+- /blog: Short tutorials (shelf vs Amazon/Walmart/Target, Black Friday checks, flips, gas, grocery lists, and receipts)
+- /privacy: Privacy policy
+- /terms: Terms of service
+- /app-ads.txt: Authorized digital sellers
+- /sitemap-index.xml: XML sitemap
 
 ## Contact
 Support: mailto:hello@isitworthit.io

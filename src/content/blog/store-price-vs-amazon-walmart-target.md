@@ -8,7 +8,7 @@ heroAlt: A boxed product and a folded shelf tag on a dark checkout counter
 heroStyle: banner
 ---
 
-You are holding the item. The shelf tag looks fair. The open question is whether that same item is cheaper on Amazon, Walmart, or Target right now — or whether the aisle price is the one worth paying.
+You are holding the item. The shelf tag looks fair. The open question is whether that same item is cheaper on Amazon, Walmart, or Target right now, or whether the aisle price is the one worth paying.
 
 WorthIt answers that from one photo.
 
@@ -34,12 +34,12 @@ If the tag was cut off in the photo, add the shelf price yourself so the compari
 
 ## Buy or walk
 
-If the shelf price sits under the typical range and under the online comps, buying in store can be the simpler trip. If the tag is higher, put it back — or finish the purchase online later.
+If the shelf price sits under the typical range and under the online comps, buying in store can be the simpler trip. If the tag is higher, put it back, or finish the purchase online later.
 
 Shipping, pickup, and membership fees still matter for the final total. WorthIt is the aisle check, not a checkout calculator for every fee.
 
 ## When this beats opening three apps
 
-Standing in the aisle with Safari tabs for Amazon, Walmart, and Target is slow. One scan keeps the decision in one place. Use it on the item you were already unsure about — not every box on the endcap.
+Standing in the aisle with Safari tabs for Amazon, Walmart, and Target is slow. One scan keeps the decision in one place. Use it on the item you were already unsure about, not every box on the endcap.
 
 Download WorthIt free on iPhone and try it the next time a shelf tag makes you hesitate.

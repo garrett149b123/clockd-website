@@ -31,7 +31,7 @@ Open http://localhost:4321
 1. Push this repo to GitHub (`garrett149b123/clockd-website`).
 2. In [Vercel](https://vercel.com/new), import the repo.
 3. Framework preset: **Astro** (auto-detected).
-4. Deploy — no env vars required for v1.
+4. Deploy. No env vars required for v1.
 
 ## Namecheap DNS → Vercel
 

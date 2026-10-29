@@ -18,4 +18,4 @@ export const DEFAULT_DESCRIPTION =
 export const DEFAULT_OG_IMAGE = '/screenshots/save.png';
 
 export const CTA_PRIMARY = 'Download WorthIt Free on iPhone';
-export const CTA_MICRO = 'Free to download · No credit card needed';
+export const CTA_MICRO = 'Free to download. No credit card needed';
