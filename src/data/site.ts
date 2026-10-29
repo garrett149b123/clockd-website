@@ -8,6 +8,8 @@ export const INSTAGRAM_URL = 'https://www.instagram.com/getworthitapp/';
 export const INSTAGRAM_HANDLE = '@getworthitapp';
 export const TIKTOK_URL = 'https://www.tiktok.com/@getworthitapp';
 export const TIKTOK_HANDLE = '@getworthitapp';
+export const YOUTUBE_URL = 'https://www.youtube.com/@worthitapp';
+export const YOUTUBE_HANDLE = '@worthitapp';
 export const SUPPORT_EMAIL = 'hello@isitworthit.io';
 
 export const DEFAULT_TITLE = 'WorthIt | Is the shelf price worth it?';

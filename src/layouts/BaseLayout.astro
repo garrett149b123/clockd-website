@@ -13,6 +13,8 @@ import {
   SUPPORT_EMAIL,
   TIKTOK_HANDLE,
   TIKTOK_URL,
+  YOUTUBE_HANDLE,
+  YOUTUBE_URL,
 } from '../data/site';
 import type { AppStoreRating } from '../lib/appStoreRating';
 import { FALLBACK_APP_STORE_RATING } from '../lib/appStoreRating';
@@ -80,7 +82,7 @@ const softwareLd = {
     email: SUPPORT_EMAIL,
     contactType: 'customer support',
   },
-  sameAs: [APP_STORE_URL, INSTAGRAM_URL, TIKTOK_URL],
+  sameAs: [APP_STORE_URL, INSTAGRAM_URL, TIKTOK_URL, YOUTUBE_URL],
 };
 
 const extraLd = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
@@ -163,6 +165,7 @@ const jsonLdPayload = {
         <div class="footer-links">
           <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">Instagram {INSTAGRAM_HANDLE}</a>
           <a href={TIKTOK_URL} target="_blank" rel="noopener noreferrer">TikTok {TIKTOK_HANDLE}</a>
+          <a href={YOUTUBE_URL} target="_blank" rel="noopener noreferrer">YouTube {YOUTUBE_HANDLE}</a>
           <a href="/blog">Blog</a>
           <a href="/#built-by">About</a>
           <a href="/privacy">Privacy</a>
